@@ -1,0 +1,23 @@
+{
+  "name": "live-drink-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericholdridge/live-drink-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericholdridge/live-drink-website/issues"
+  },
+  "homepage": "https://github.com/ericholdridge/live-drink-website#readme",
+  "dependencies": {
+    "tailwindcss": "^1.1.4"
+  }
+}
