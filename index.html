@@ -11,50 +11,59 @@
     <script src="https://kit.fontawesome.com/9808de19ba.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="w-full bg-cover w-auto bg-center bg-no-repeat pb-20 relative" style="background-image: url('/images/slide-1.jpg');">
-        <div class="prev absolute left-0 bg-white p-4 rounded-tr-full rounded-br-full opacity-25" style="transform: translateY(-50%); top: 50%;">
-            <a href="">prev</a>
-        </div>
-        <div class="container mx-auto py-8 flex justify-between items-center">
-            <div class="info">
-                <p class="text-white">Call us: <a href="" class="hover:text-yellow-300">+1 (844) 123-4567</a></p>
-                <p class="text-white"><a href="" class="hover:text-yellow-300">info@demolink.org</a></p>
+    <!-- Navigation -->
+    <nav class="bg-white w-full py-2 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent">
+        <div class="container mx-auto flex justify-between items-center lg:py-4">
+            <div class="wrap hidden lg:block lg:text-white font-normal tracking-wider">
+                <p>Call us: +1 (844) 123 4567</p>
+                <p>info@demolink.org</p>
             </div>
-            <div class="logo">
-                <img src="/images/logo-inverse-3-314x70.png" alt="" class="w-40">
+            <div class="div flex items-center">
+               <a href=""><i class="fas fa-bars fa-lg lg:hidden"></i></a> 
+                <img class="w-32 mx-4 lg:hidden" src="/images/logo-default-3-314x70.png" alt="">
+                <img class="w-40 mx-4 lg:block" src="images/logo-inverse-3-314x70.png" alt="">
             </div>
-            <div class="flex items-center">
-                <a href=""><i class="fas fa-search fa-lg text-white"></i></a>
-                <a href=""><i class="fas fa-shopping-cart mx-5 fa-lg text-white"></i></a>
-                <div class="circle rounded-full h-10 w-10 flex justify-center items-center bg-white text-xl">
-                    <span>en</span>
+            <div class="div flex items-center lg:text-white">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+                <a class="hidden sm:block sm:mx-4"href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+                <div class="circle rounded-full h-8 w-8 mx-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white">
+                    <a class="text-white lg:text-black" href="">en</a>
                 </div>
+                <a><i class="fas fa-ellipsis-v text-2xl sm:hidden"></i></a>
             </div>
         </div>
-        <div class="navigation">
-            <div class="container mx-auto border border-l-0 border-r-0 py-6">
-                <ul class="flex justify-center text-center text-white font-bold uppercase text-sm tracking-widest">
-                    <li class="px-6 text-yellow-300"><a href="/">Home</a></li>
-                    <li class="px-6"><a href="/">Pages</a></liclass="px-6">
-                    <li class="px-6"><a href="/">Blog</a></li>
-                    <li class="px-6"><a href="/">Gallery</a></li>
-                    <li class="px-6"><a href="/">Elements</a></li>
-                    <li class="px-6"><a href="/">Shop</a></li>
-                </ul> 
+        <div class="container mx-auto hidden sm:hidden md:hidden lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4">
+            <ul class="flex justify-center py-6 text-white text-sm font-bold tracking-wider">
+                <li class="mx-5"><a href="/">HOME</a></li>
+                <li class="mx-5"><a href="/">PAGES</a></li>
+                <li class="mx-5"><a href="/">BLOG</a></li>
+                <li class="mx-5"><a href="/">GALLERY</a></li>
+                <li class="mx-5"><a href="/">ELEMENTS</a></li>
+                <li class="mx-5"><a href="/">SHOP</a></li>
+            </ul>
+        </div>        
+    </nav> <!-- / Navigation-->
+
+    <!-- Hero -->
+    <section class="hero w-full min-h-full pt-24 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center" style="background-image: url('images/slide-1.jpg');">
+        <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
+            <div class="hero-content text-center text-white sm:text-left xl:pt-24">
+                <h1 class="text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight">Tasty Way<br>to Healthier Life</h1>
+                <p class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12">Our organic drinks contain all necessary elements and vitamins for your health.</p>
+            </div>
+            <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
+                <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="/shopnow">SHOP NOW</a>
+            </div>
+            <div class="slider-wrap flex justify-center pt-4 lg:hidden">
+                <div class="div rounded-full h-4 w-4 bg-gray-100 bg-yellow mr-3"></div>
+                <div class="div rounded-full h-4 w-4 bg-gray-100"></div>
             </div>
         </div>
-        <div class="hero flex bg-cover bg-no-repeat pt-64 pb-64">
-            <div class="container mx-auto flex justify-center flex-col w-full">
-                <h1 class="text-white font-bold text-6xl tracking-wide leading-tight">Tasty Way<br>to Healthier Life</h1>
-                <span class="text-white text-xl tracking-wide mt-6">Our organic drinks contain all necessary<br>elements and vitamins for your health.</span>
-                <div class="button">
-                    <button class="text-left inline-block px-16 py-6 rounded-b-lg rounded-t-lg bg-yellow-300 uppercase font-bold mt-12 shadow-lg">Shop now</button>
-                </div>
-            </div>
-        </div>
-        <div class="next absolute right-0" style="transform: translateY(50%); top: 50%;">
-            <a href="" class="bg-white p-4 rounded-tl-full rounded-bl-full opacity-25">next</a>
-        </div>
-    </header>
+    </section>
+
+    <!-- Services -->
+
+
+    <script src="app.js"></script>
 </body>
 </html>
