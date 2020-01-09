@@ -1,69 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Organic Farm</title>
     <!-- Main Style -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/9808de19ba.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/9808de19ba.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+
+      .card-flavor {
+          position: absolute;
+          z-index: 9999;
+          transition: all .4s ease-in-out !important;
+      }
+
+      .card-flavor:hover {
+        transform: translateY(30px);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-flavor:hover .flavor-btns {
+        display: flex !important;
+      }
+  </style>
+
+  <body>
     <!-- Navigation -->
-    <nav class="bg-white w-full py-2 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent">
-        <div class="container mx-auto flex justify-between items-center lg:py-4">
-            <div class="wrap hidden lg:block lg:text-white font-normal tracking-wider">
-                <p>Call us: +1 (844) 123 4567</p>
-                <p>info@demolink.org</p>
-            </div>
-            <div class="div flex items-center">
-               <a href=""><i class="fas fa-bars fa-lg lg:hidden"></i></a> 
-                <img class="w-32 mx-4 lg:hidden" src="/images/logo-default-3-314x70.png" alt="">
-                <img class="w-40 mx-4 lg:block" src="images/logo-inverse-3-314x70.png" alt="">
-            </div>
-            <div class="div flex items-center lg:text-white">
-                <a href=""><i class="fas fa-search fa-lg"></i></a>
-                <a class="hidden sm:block sm:mx-4"href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
-                <div class="circle rounded-full h-8 w-8 mx-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white">
-                    <a class="text-white lg:text-black" href="">en</a>
-                </div>
-                <a><i class="fas fa-ellipsis-v text-2xl sm:hidden"></i></a>
-            </div>
+    <nav
+      class="fixed z-10 bg-white w-full py-3 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent"
+    >
+      <div
+        class="container px-4 mx-auto flex justify-between items-center lg:py-4"
+      >
+        <div
+          class="wrap hidden lg:block lg:text-white font-normal tracking-wider"
+        >
+          <p>Call us: +1 (844) 123 4567</p>
+          <p>info@demolink.org</p>
         </div>
-        <div class="container mx-auto hidden sm:hidden md:hidden lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4">
-            <ul class="flex justify-center py-6 text-white text-sm font-bold tracking-wider">
-                <li class="mx-5"><a href="/">HOME</a></li>
-                <li class="mx-5"><a href="/">PAGES</a></li>
-                <li class="mx-5"><a href="/">BLOG</a></li>
-                <li class="mx-5"><a href="/">GALLERY</a></li>
-                <li class="mx-5"><a href="/">ELEMENTS</a></li>
-                <li class="mx-5"><a href="/">SHOP</a></li>
-            </ul>
-        </div>        
-    </nav> <!-- / Navigation-->
+        <div class="div flex items-center">
+          <a href=""><i class="fas fa-bars fa-lg lg:hidden"></i></a>
+          <img
+            class="w-32 mx-4 lg:hidden"
+            src="/images/logo-default-3-314x70.png"
+            alt=""
+          />
+          <img
+            class="w-40 mx-4 lg:block"
+            src="images/logo-inverse-3-314x70.png"
+            alt=""
+          />
+        </div>
+        <div class="div flex items-center lg:text-white">
+          <a href=""><i class="fas fa-search fa-lg"></i></a>
+          <a class="hidden sm:block sm:mx-4" href=""
+            ><i class="fas fa-shopping-cart fa-lg"></i
+          ></a>
+          <div
+            class="circle rounded-full h-8 w-8 mx-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white"
+          >
+            <a class="text-white lg:text-black" href="">en</a>
+          </div>
+          <a><i class="fas fa-ellipsis-v text-2xl sm:hidden"></i></a>
+        </div>
+      </div>
+      <div
+        class="container mx-auto hidden sm:hidden md:hidden lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4"
+      >
+        <ul
+          class="flex justify-center py-6 text-white text-sm font-bold tracking-wider"
+        >
+          <li class="mx-5"><a href="/">HOME</a></li>
+          <li class="mx-5"><a href="/">PAGES</a></li>
+          <li class="mx-5"><a href="/">BLOG</a></li>
+          <li class="mx-5"><a href="/">GALLERY</a></li>
+          <li class="mx-5"><a href="/">ELEMENTS</a></li>
+          <li class="mx-5"><a href="/">SHOP</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- / Navigation-->
 
     <!-- Hero -->
-    <section class="hero w-full min-h-full pt-24 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center" style="background-image: url('images/slide-1.jpg');">
-        <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
-            <div class="hero-content text-center text-white sm:text-left xl:pt-24">
-                <h1 class="text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight">Tasty Way<br>to Healthier Life</h1>
-                <p class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12">Our organic drinks contain all necessary elements and vitamins for your health.</p>
-            </div>
-            <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
-                <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="/shopnow">SHOP NOW</a>
-            </div>
-            <div class="slider-wrap flex justify-center pt-4 lg:hidden">
-                <div class="div rounded-full h-4 w-4 bg-gray-100 bg-yellow mr-3"></div>
-                <div class="div rounded-full h-4 w-4 bg-gray-100"></div>
-            </div>
+    <section
+      class="pt-24 hero w-full min-h-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center"
+      style="background-image: url('images/slide-1.jpg');"
+    >
+      <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
+        <div class="hero-content text-center text-white sm:text-left xl:pt-24">
+          <h1
+            class="pt-1 text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight"
+          >
+            Tasty Way<br />to Healthier Life
+          </h1>
+          <p
+            class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12"
+          >
+            Our organic drinks contain all necessary elements and vitamins for
+            your health.
+          </p>
         </div>
+        <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
+          <a
+            class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14"
+            href="/shopnow"
+            >SHOP NOW</a
+          >
+        </div>
+        <div class="slider-wrap flex justify-center pt-4 lg:hidden">
+          <div
+            class="div rounded-full h-4 w-4 bg-yellow mr-3"
+          ></div>
+          <div class="div rounded-full h-4 w-4 bg-white"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Services -->
+    <section
+      class="w-full bg-cover bg-center bg-no-repeat"
+      style="background-image: url('images/bg-pattern-1.jpg');"
+    >
+      <div class="container mx-auto px-4">
+        <!-- card -->
+        <div class="w-full pt-16 text-center flex flex-col items-center">
+          <div
+            class="flex justify-center items-center h-12 w-12 rounded-full bg-green text-white shadow-md"
+          >
+            <i class="fas fa-home fa-2x"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl uppercase py-2">100% Organic</h3>
+            <p class="text-xs text-gray">
+              We make our products from 100% organic and fresh ingredients full
+              of vitamins and nutrients.
+            </p>
+          </div>
+        </div>
+        <!-- card -->
+        <div class="w-full pt-8 text-center flex flex-col items-center">
+          <div
+            class="flex justify-center items-center h-12 w-12 rounded-full bg-green text-white shadow-md"
+          >
+            <i class="fas fa-sun fa-2x"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl uppercase py-2">good for health</h3>
+            <p class="text-xs text-gray">
+              Our drinks are exceptionally good for boosting your health and
+              increasing your energy level.
+            </p>
+          </div>
+        </div>
+        <!-- card -->
+        <div class="w-full pt-8 text-center flex flex-col items-center">
+          <div
+            class="flex justify-center items-center h-12 w-12 rounded-full bg-green text-white shadow-md"
+          >
+            <i class="fas fa-seedling fa-2x"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl uppercase py-2">no additives</h3>
+            <p class="text-xs text-gray">
+              Our smoothies, healthy drinks, and energy bowls contain no
+              artificial additives, only vital elements.
+            </p>
+          </div>
+        </div>
+        <!-- card -->
+        <div class="w-full pt-8 pb-20 text-center flex flex-col items-center">
+          <div
+            class="flex justify-center items-center h-12 w-12 rounded-full bg-green text-white shadow-md"
+          >
+            <i class="fas fa-lightbulb fa-2x"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-xl uppercase py-2">a lot of energy</h3>
+            <p class="text-xs text-gray">
+              We designed our products as the universal organic energetics that
+              can quench your thirst.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Flavors -->
+    <section class="w-full">
+        <h1 class="text-center font-semibold text-3xl">New Flavors</h1>
+      <div class="container mx-auto py-12 flex flex-col items-center sm:px-10 sm:flex-wrap sm:flex-row sm:justify-between md:px-24 lg:justify-start lg:pb-40">
+        <!-- card -->
+        <div class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:py-10 h-auto">
+          <span class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md">sale</span>
+          <div class="flex justify-center">
+            <img src="/images/product-1.png" alt="" />
+          </div>
+          <h3 class="text-center uppercase font-medium pt-6">Mango</h3>
+          <div class="pricing flex justify-center">
+            <p class="mr-3 text-gray line-through">$30.00</p>
+            <p class="text-green">$23.00</p>
+          </div>
+          <div class="flavor-btns wrap flex justify-center pt-4 lg:hidden">
+            <div
+              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+              <a href=""><i class="fas fa-search fa-lg"></i></a>
+            </div>
+            <div
+              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+            >
+              <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+            </div>
+          </div>
+        </div> <!-- End card-->
+        <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out h-auto">
+            <span class="absolute right-0 mr-4 rounded-lg px-3 text-white bg-flavorGray uppercase font-bold text-md">new</span>
+            <div class="flex justify-center">
+              <img src="/images/product-2.png" alt="" />
+            </div>
+            <h3 class="text-center uppercase font-medium pt-6">Strawberry</h3>
+            <div class="pricing flex justify-center">
+              <p class="text-green">$13.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+          <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+            <!-- <span class="absolute right-0 mr-4 rounded-lg bg-black px-4 text-white bg-red uppercase font-bold text-md">sale</span> -->
+            <div class="flex justify-center">
+              <img src="/images/product-3.png" alt="" />
+            </div>
+            <h3 class="text-center uppercase font-medium pt-6">Apple</h3>
+            <div class="pricing flex justify-center">
+              <p class="text-green">$17.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+          <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+            <span class="absolute right-0 mr-4 bg-flavorGray rounded-lg px-3 text-white bg-red uppercase font-bold text-md">new</span>
+            <div class="flex justify-center">
+              <img src="/images/product-7.png" alt="" />
+            </div>
+            <h3 class="text-center uppercase font-medium pt-6">carrots</h3>
+            <div class="pricing flex justify-center">
+              <p class="text-green">$13.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+          <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 xl:ml-0 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+            <span class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-flavorGray uppercase font-bold text-md">new</span>
+            <div class="flex justify-center">
+              <img src="/images/product-4.png" alt="" />
+            </div>
+            <h3 class="text-center uppercase font-medium pt-6">Guavo</h3>
+            <div class="pricing flex justify-center">
+              <p class="text-green">$13.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+          <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+            <!-- <span class="absolute right-0 mr-4 rounded-lg bg-black px-4 text-white bg-red uppercase font-bold text-md">sale</span> -->
+            <div class="flex justify-center">
+              <img src="/images/product-5.png" alt="" />
+            </div>
+            <h3 class="text-center uppercase font-medium pt-6">Grapes</h3>
+            <div class="pricing flex justify-center">
+              <p class="text-green">$17.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+          <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+            <span class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md">sale</span>
+            <div class="flex justify-center">
+              <img src="/images/product-6.png" alt="" />
+            </div>
+            <a href=""><h3 class="text-center uppercase font-medium pt-6">bananas</h3></a>
+            <div class="pricing flex justify-center">
+              <p class="mr-3 text-gray line-through">$30.00</p>
+              <p class="text-green">$23.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+          <!-- card -->
+        <div class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+            <span class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md">sale</span>
+            <div class="flex justify-center">
+              <img src="/images/product-8.png" alt="" />
+            </div>
+            <h3 class="text-center uppercase font-medium pt-6">Orange</h3>
+            <div class="pricing flex justify-center">
+              <p class="text-green">$17.00</p>
+            </div>
+            <div class="wrap flex justify-center pt-4 lg:hidden">
+              <div
+                class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
+                <a href=""><i class="fas fa-search fa-lg"></i></a>
+              </div>
+              <div
+                class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
+              >
+                <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+              </div>
+            </div>
+          </div> <!-- End card-->
+      </div>
+    </section>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

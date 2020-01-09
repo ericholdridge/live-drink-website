@@ -2,10 +2,6 @@
 module.exports = {
     important: true,
     theme: {
-        // screens: {
-        //     'xxl': '1400px',
-        //     // => @media (min-width: 1400px) { ... }
-        // },
         container: {
             padding: '0 1rem',
         },
@@ -14,18 +10,31 @@ module.exports = {
         },
         extend: {
             colors: {
-            green: '#76aa6f',
-            yellow: '#f9e95e',
-            navBdrColor: 'rgba(255, 255, 255, 0.23)',
+                green: '#76aa6f',
+                yellow: '#f9e95e',
+                gray: '#777777',
+                navBdrColor: 'rgba(255, 255, 255, 0.23)',
+                flavorBgColor: '#F5F5F3',
+                red: '#f96666',
+                flavorGray: '#93a6ab',
             },
             margin: {
+
             },
             height: {
                 half: '50%',
+            },
+            spacing: {
+                '72': '18rem',
+                '84': '21rem',
+                '96': '24rem',
             }
         }
     },
     variants: {
-
-    }
+        textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    },
+    plugins: [
+        require('tailwindcss-transitions')(),
+      ],
   }
