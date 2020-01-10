@@ -17,6 +17,7 @@ module.exports = {
                 flavorBgColor: '#F5F5F3',
                 red: '#f96666',
                 flavorGray: '#93a6ab',
+                servicesBorder: '#e1e1e1',
             },
             margin: {
 
