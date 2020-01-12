@@ -18,6 +18,7 @@ module.exports = {
                 red: '#f96666',
                 flavorGray: '#93a6ab',
                 servicesBorder: '#e1e1e1',
+                heroPrevNext: 'rgba(255, 255, 255, 0.3)',
             },
             margin: {
 
@@ -28,6 +29,7 @@ module.exports = {
             spacing: {
                 '72': '18rem',
                 '84': '21rem',
+                '92': '23rem',
                 '96': '24rem',
             }
         }

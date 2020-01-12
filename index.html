@@ -72,10 +72,10 @@
     <!-- / Navigation-->
 
     <!-- Hero -->
-    <section
-      class="pt-24 hero w-full min-h-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center"
-      style="background-image: url('images/slide-1.jpg');"
-    >
+    <section class="pt-24 hero w-full min-h-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center relative" style="background-image: url('images/slide-1.jpg');">
+        <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:left-0 z-0" style="transform: translateY(-50%); top: 50%;">
+            <a class="lg:p-5 bg-heroPrevNext lg:rounded-tr-full lg:rounded-br-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1" style="bottom: 4px; right: 4px;">prev</span></a>
+        </div>
       <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
         <div class="hero-content text-center text-white sm:text-left xl:pt-24">
           <h1
@@ -102,11 +102,14 @@
           <div class="div rounded-full h-4 w-4 bg-white"></div>
         </div>
       </div>
+      <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:right-0 z-0" style="transform: translateY(-50%); top: 50%;">
+        <a class="lg:p-5 bg-heroPrevNext lg:rounded-tl-full lg:rounded-bl-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1"  style="bottom: 4px; left: 4px;">next</span></a>
+    </div>
     </section>
 
     <!-- Services -->
     <section
-      class="w-full bg-cover bg-center bg-no-repeat"
+      class="w-full bg-center bg-repeat"
       style="background-image: url('images/bg-pattern-1.jpg');"
     >
       <div class="container mx-auto px-4 sm:flex md:py-20">
@@ -269,8 +272,7 @@
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <!-- End card-->
+        </div><!-- End card-->
         <!-- card -->
         <div
           class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
@@ -298,8 +300,7 @@
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <!-- End card-->
+        </div><!-- End card-->
         <!-- card -->
         <div
           class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 xl:ml-0 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
@@ -327,8 +328,7 @@
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <!-- End card-->
+        </div><!-- End card-->
         <!-- card -->
         <div
           class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
@@ -353,8 +353,7 @@
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <!-- End card-->
+        </div><!-- End card-->
         <!-- card -->
         <div
           class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
@@ -385,8 +384,7 @@
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <!-- End card-->
+        </div><!-- End card-->
         <!-- card -->
         <div
           class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
@@ -414,13 +412,12 @@
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <!-- End card-->
+        </div><!-- End card-->
       </div>
     </section>
 
     <!-- Counter Section -->
-    <section class="w-full bg-center bg-no-repeat bg-cover" style="background: url('./images/parallax-2.jpg');">
+    <section class="w-full bg-center bg-no-repeat bg-cover" style="background-image: url('./images/parallax-2.jpg');">
         <div class="container mx-auto flex flex-wrap justify-between py-16 xl:py-32">
             <div class="w-6/12 sm:w-3/12 text-center text-white mb-8">
                 <span class="text-2xl font-bold border-b-2 border-b-white lg:text-5xl">245</span>
@@ -445,17 +442,17 @@
 
     <!-- Section Product/Clients -->
     <section class="w-full">
-        <div class="container mx-auto">
+        <div class="container mx-auto xl:py-12">
             <div class="wrap py-12">
                 <div class="wrapper md:flex justify-between md:px-4">
-                    <div class="bg-cover bg-no-repeat bg-center w-6/12 md:w-84 lg:w-96 mx-auto md:mx-0" style="background-image:url('./images/bg-pattern-1.jpg');">
-                        <div class="img flex justify-center pt-8 lg:pt-6">
-                            <img class="block object-contain h-48 w-56 lg:h-full lg:w-84" src="./images/product-big-3.png" alt="">
+                    <div class="bg-cover bg-repeat bg-auto bg-center w-6/12 md:w-84 lg:w-96 xl:w-5/12 mx-auto md:mx-0 xl:pb-6" style="background-image:url('./images/bg-pattern-1.jpg');">
+                        <div class="img flex justify-center pt-8 lg:pt-6 ">
+                            <img class="block object-contain h-48 w-56 lg:h-full lg:w-84 xl:h-full xl:w-96" src="./images/product-big-3.png" alt="">
                         </div>
-                        <p class="text-center uppercase font-bold text-lg lg:pt-4">chili mango</p>
+                        <p class="text-center uppercase font-bold text-lg lg:pt-4 xl:text-3xl">chili mango</p>
                         <div class="pricing flex justify-center py-2">
-                            <p class="text-gray line-through mr-2">$30.00</p>
-                            <p class="text-green">$23.00</p>
+                            <p class="text-gray line-through mr-2 xl:text-xl">$30.00</p>
+                            <p class="text-green xl:text-xl">$23.00</p>
                         </div>
                         <div class="slider flex justify-center pt-2 pb-6">
                             <div class="circle h-3 w-3 rounded-full bg-green mr-2">
@@ -469,56 +466,111 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:w-84 lg:w-7/12">
-                        <h1 class="text-center font-bold text-3xl py-6 lg:text-left lg:text-5xl tracking-wider">Why Organic?</h1>
-                        <div class="px-2 md:px-0">
-                            <div class="flex items-center pb-2">
-                                <div class="circle h-8 w-8 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
+                    <div class="md:w-84 lg:w-7/12 xl:w-7/12 xl:flex xl:flex-col xl:justify-center">
+                        <h1 class="text-center font-bold text-3xl py-6 md:text-left lg:text-left lg:text-5xl tracking-wider xl:px-10">Why Organic?</h1>
+                        <div class="px-2 md:px-0 xl:px-10">
+                            <div class="pb-4 flex items-center pb-2 md:py-6 xl:py-6">
+                                <div class="circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
                                     <i class="fas fa-chevron-right"></i>
                                 </div>
-                                <p class="pl-2 font-medium">Organic drinks contain more antioxidants.</p>
+                                <p class="pl-2 font-medium xl:text-xl">Organic drinks contain more antioxidants.</p>
                             </div>
-                            <div class="flex items-center py-2 border border-l-0 border-r-0 border-servicesBorder">
-                                <div class="circle h-8 w-8 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
+                            <div class="py-4 flex items-center py-2 border border-l-0 border-r-0 border-servicesBorder md:py-6 xl:py-6">
+                                <div class="circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
                                     <i class="fas fa-chevron-right"></i>
                                 </div>
-                                <p class="pl-2 font-medium">Organic drinks are better for the environment.</p>
+                                <p class="pl-2 font-medium xl:text-xl">Organic drinks are better for the environment.</p>
                             </div>
-                            <div class="flex items-center pt-2">
-                                <div class="circle h-8 w-8 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
+                            <div class="pt-4 flex items-center pt-2 md:py-6 xl:py-6">
+                                <div class="circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
                                     <i class="fas fa-chevron-right"></i>
                                 </div>
-                                <p class="pl-2 font-medium">They're higher in nutrients.</p>
+                                <p class="pl-2 font-medium xl:text-xl">They're higher in nutrients.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-4 py-6 sm:flex flex-wrap justify-between md:px-4 lg:flex-no-wrap lg:pt-20">
-                    <div class="card text-center border border-servicesBorder py-3 sm:w-72 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col">
-                            <i class="fas fa-map-marker-alt hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden"></i>
-                        <div class="wrap md:text-left">
-                            <i class="fas fa-map-marker-alt text-4xl text-green pb-1 md:px-4 lg:block lg:px-0 lg:text-5xl lg:pb-2"></i>
+                    <div class="card text-center border border-servicesBorder py-3 sm:w-72 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
+                            <i class="fas fa-map-marker-alt hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
+                        <div class="wrap md:text-left md:px-4 ">
+                            <i class="fas fa-map-marker-alt text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
                             <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">free shipping</h3>
                             <span class="text-gray text-sm pt-4 lg:text-base">Enjoy our fast & free delivery</span>
                         </div>
                     </div>
-                    <div class="card text-center border border-servicesBorder py-3 my-8 sm:w-72 sm:my-0 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col">
-                        <i class="fas fa-comment-dots hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden"></i>
-                        <div class="wrap md:text-left">
-                            <i class="fas fa-comment-dots text-4xl text-green pb-1 md:px-4 lg:block lg:px-0 lg:text-5xl lg:pb-2"></i>
+                    <div class="card text-center border border-servicesBorder py-3 my-8 sm:w-72 sm:my-0 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
+                        <i class="fas fa-comment-dots hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
+                        <div class="wrap md:text-left md:px-4 ">
+                            <i class="fas fa-comment-dots text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
                             <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">customer care</h3>
                             <span class="text-gray text-sm pt-4 lg:text-base">Always ready to help you</span>
                         </div>
                     </div>
-                    <div class="card text-center border border-servicesBorder py-3 sm:w-72 sm:mt-6 md:w-84 md:flex md:items-center md:py-6 lg:mt-0 lg:w-72 lg:flex-col">
-                        <i class="fas fa-heart hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden"></i>
-                        <div class="wrap text-center md:text-left">
-                            <i class="fas fa-heart text-4xl text-green pb-1 md:px-4 lg:block lg:px-0 lg:text-5xl lg:pb-2"></i>
+                    <div class="card text-center border border-servicesBorder py-3 sm:w-72 sm:mt-6 md:w-84 md:flex md:items-center md:py-6 lg:mt-0 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
+                        <i class="fas fa-heart hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
+                        <div class="wrap text-center md:px-4 md:text-left">
+                            <i class="fas fa-heart text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
                             <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">healthy & energetic</h3>
                             <span class="text-gray text-sm pt-4 lg:text-base">Our drinks are very nutritious.</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What people say -->
+    <section class="w-full bg-repeat bg-center bg-auto" style="background-image: url('./images/bg-pattern-1.jpg');">
+        <div class="container mx-auto px-4 py-10 relative md:py-20">
+            <div class="previous absolute left-0 ml-4" style="transform: translateY(50%); top: 50%;">
+                <span class="text-sm font-bold tracking-wider text-gray border-b-2 border-gray py-1 md:hidden">prev</span> 
+             </div>
+            <h3 class="text-center font-bold capitalize text-3xl tracking-wide xl:text-6xl">What people say</h3>
+            <p class="text-center text-gray text-lg py-6 leading-loose tracking-wider sm:pb-10 md:text-xl">Your healthy drinks have a wonderful taste and the amazing selection of their flavors is what really attracts me in your store. Thank you for fast delivery and your fresh drinks!</p>
+            <div class="wrap flex justify-center">
+                <div class="images text-center py-1 md:flex md:py-0 justify-between md:w-8/12 xl:w-6/12">
+                    <div class="opacity-50 hover:opacity-100 cursor-pointer saying block sm:block md:block transition-250 transition-ease-in-out">
+                        <div class="img-wrap h-24 w-24 rounded-full mx-auto">
+                            <img class="rounded-full object-contain block" src="./images/user-7.jpg" alt="">
+                        </div>
+                        <p class="text-sm font-bold tracking-widest uppercase pt-2">patrick goodman</p>
+                        <span class="text-sm text-green capitalize italic md:font-medium">client</span>
+                    </div>
+                    <div class="saying opacity-50 hover:opacity-100 cursor-pointer hidden sm:hidden md:block transition-250 transition-ease-in-out">
+                        <div class="img-wrap h-24 w-24 rounded-full mx-auto">
+                            <img class="rounded-full object-contain block" src="./images/user-8.jpg" alt="">
+                        </div>
+                        <p class="text-sm font-bold tracking-widest uppercase pt-2">kate smith</p>
+                        <span class="text-sm text-green capitalize italic md:font-medium">client</span>
+                    </div>
+                    <div class="saying opacity-50 hover:opacity-100 cursor-pointer hidden sm:hidden md:block transition-250 transition-ease-in-out">
+                        <div class="img-wrap h-24 w-24 rounded-full mx-auto">
+                            <img class="rounded-full object-contain block" src="./images/user-9.jpg" alt="">
+                        </div>
+                        <p class="text-sm font-bold tracking-widest uppercase pt-2">sam wilson</p>
+                        <span class="text-sm text-green capitalize italic md:font-medium">client</span>
+                    </div>
+                </div>
+            </div>
+            <div class="next absolute right-0 mr-4" style="transform: translateY(50%); top: 50%;">
+                <span class="text-sm font-bold tracking-wider text-gray border-b-2 border-gray py-1 md:hidden">next</span> 
+             </div>
+        </div>
+    </section>
+
+    <!-- Stay connected -->
+    <section class="stay-connected w-full bg-no-repeat bg-local bg-auto bg-center" style="background-image: url('./images/parallax-4.jpg');">
+        <div class="container mx-auto py-10 text-center text-white sm:px-6 lg:flex lg:justify-center lg:py-20">
+            <div class="wrap lg:w-4/12">
+                <h3 class="text-center uppercase tracking-widest font-light text-2xl md:text-left lg:flex lg:flex-col"><span class="font-bold pr-1">stay</span>connected</h3>
+                <p class="text-sm tracking-wider pt-2 md:text-left">Subscribe to our newsletter</p>
+            </div>
+            <div class="w-full px-4 pt-10 md:px-0">
+                <form class="w-full sm:flex md:items-end justify-start lg:flex lg:justify-center" action="" method="POST">
+                    <input class="w-full bg-transparent text-center border-b py-2 placeholder-white tracking-widest outline-none sm:w-10/12 sm:mr-6 md:w-8/12 md:py-4 md:mr-6 sm:py-0 lg:w-8/12 lg:text-xl" type="email" name="email" placeholder="Enter your e-mail address">
+                    <input class="bg-green text-center w-full py-4 mt-6 rounded-lg uppercase tracking-wider font-bold sm:w-4/12 sm:mt-0 md:w-4/12 lg:w-3/12 lg:ml-auto" type="submit" value="Subscribe"></input>
+                </form>
             </div>
         </div>
     </section>
