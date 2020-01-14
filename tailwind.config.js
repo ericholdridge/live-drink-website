@@ -5,6 +5,13 @@ module.exports = {
         container: {
             padding: '0 1rem',
         },
+        maxWidth: {
+            '1/4': '25%',
+            '1/3': '33%',
+            '1/2': '50%',
+            '3/4': '75%',
+            'custom280': '280px',
+        },
         fontFamily: {
 
         },
