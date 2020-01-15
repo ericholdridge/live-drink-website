@@ -25,6 +25,16 @@
     .team:hover img {
         transform: scale(1.1) !important;
     }
+
+    /* Hero Image slide */
+    .slide1 {
+        background-image: url('./images/slide-1.jpg');
+    }
+    .slide2 {
+        background-image: url('./images/slide-2.jpg');
+    }
+
+
   </style>
 
   <body>
@@ -82,42 +92,63 @@
         </ul>
       </div>
     </nav>
-    <!-- / Navigation-->
+
 
     <!-- Hero -->
-    <section class="pt-24 hero w-full min-h-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center relative" style="background-image: url('images/slide-1.jpg');">
-        <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:left-0 z-0" style="transform: translateY(-50%); top: 50%;">
-            <a class="lg:p-5 bg-heroPrevNext lg:rounded-tr-full lg:rounded-br-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1" style="bottom: 4px; right: 4px;">prev</span></a>
+    <section class="relative">
+        <!-- Slide 1 -->
+        <div class="slide slide1 pt-24 hero w-full min-h-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center">
+            <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:left-0 z-0" style="transform: translateY(-50%); top: 50%;">
+                <a class="lg:p-5 bg-heroPrevNext lg:rounded-tr-full lg:rounded-br-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1" style="bottom: 4px; right: 4px;">prev</span></a>
+            </div>
+            <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
+                <div class="hero-content text-center text-white sm:text-left xl:pt-24">
+                    <h1 class="pt-1 text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight">
+                        Tasty Way<br />to Healthier Life
+                    </h1>
+                    <p class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12">
+                        Our organic drinks contain all necessary elements and vitamins for
+                        your health.
+                    </p>
+                </div>
+                <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
+                    <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="/shopnow">SHOP NOW</a>
+                </div>
+                    <div class="slider-wrap flex justify-center pt-4 lg:hidden">
+                    <div class="div rounded-full h-4 w-4 bg-yellow mr-3"></div>
+                    <div class="div rounded-full h-4 w-4 bg-white"></div>
+                </div>
+            </div>
+            <div class="next hidden sm:hidden md:hidden lg:block absolute lg:right-0 z-0" style="transform: translateY(-50%); top: 50%;">
+                <a class="lg:p-5 bg-heroPrevNext lg:rounded-tl-full lg:rounded-bl-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1"  style="bottom: 4px; left: 4px;">next</span></a>
+            </div>
         </div>
-      <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
-        <div class="hero-content text-center text-white sm:text-left xl:pt-24">
-          <h1
-            class="pt-1 text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight"
-          >
-            Tasty Way<br />to Healthier Life
-          </h1>
-          <p
-            class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12"
-          >
-            Our organic drinks contain all necessary elements and vitamins for
-            your health.
-          </p>
+        <!-- Slide 2 -->
+        <div class="slide slide2 pt-24 hero w-full min-h-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center">
+            <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:left-0 z-0" style="transform: translateY(-50%); top: 50%;">
+                <a class="lg:p-5 bg-heroPrevNext lg:rounded-tr-full lg:rounded-br-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1" style="bottom: 4px; right: 4px;">prev</span></a>
+            </div>
+            <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-1">
+                <div class="hero-content text-center text-white xl:pt-24 md:pt-10">
+                    <h1 class="font-bold text-3xl tracking-wider py-1 sm:text-2xl md:text-4xl lg:text-5xl lg:pt-4">
+                        New Drink, New Day
+                    </h1>
+                    <p class="tracking-widest text-lg pt-1 pb-2 md:text-xl md:px-9 lg:w-10/12 lg:mx-auto lg:pb-3 xl:w-7/12">
+                        With our wide variety of smoothies and healthy drinks, we are sure to help you make the right choice to start your day.
+                    </p>
+                </div>
+                <div class="button flex justify-center py-4 sm:justify-center sm:pt-6 py-6 md:pb-10 xl:pb-40">
+                    <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-extrabold tracking-wider text-sm sm:py-4 sm:px-9 md:py-5 md:px-12 lg:py-6 lg:px-14 md:tracking-widest" href="/shopnow">SHOP NOW</a>
+                </div>
+                <div class="slider-wrap flex justify-center pt-4 lg:hidden">
+                    <div class="div rounded-full h-4 w-4 bg-yellow mr-3"></div>
+                    <div class="div rounded-full h-4 w-4 bg-white"></div>
+                </div>
+            </div>
+            <div class="next hidden sm:hidden md:hidden lg:block absolute lg:right-0 z-0" style="transform: translateY(-50%); top: 50%;">
+                <a class="lg:p-5 bg-heroPrevNext lg:rounded-tl-full lg:rounded-bl-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1"  style="bottom: 4px; left: 4px;">next</span></a>
+            </div>
         </div>
-        <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
-          <a
-            class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14"
-            href="/shopnow"
-            >SHOP NOW</a
-          >
-        </div>
-        <div class="slider-wrap flex justify-center pt-4 lg:hidden">
-          <div class="div rounded-full h-4 w-4 bg-yellow mr-3"></div>
-          <div class="div rounded-full h-4 w-4 bg-white"></div>
-        </div>
-      </div>
-      <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:right-0 z-0" style="transform: translateY(-50%); top: 50%;">
-        <a class="lg:p-5 bg-heroPrevNext lg:rounded-tl-full lg:rounded-bl-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1"  style="bottom: 4px; left: 4px;">next</span></a>
-    </div>
     </section>
 
     <!-- Services -->
