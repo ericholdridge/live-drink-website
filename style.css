@@ -4675,12 +4675,20 @@ video {
   min-height: 0 !important;
 }
 
-.min-h-full {
-  min-height: 100% !important;
+.min-h-1\/4 {
+  min-height: 25% !important;
 }
 
-.min-h-screen {
-  min-height: 100vh !important;
+.min-h-1\/2 {
+  min-height: 50% !important;
+}
+
+.min-h-3\/4 {
+  min-height: 75% !important;
+}
+
+.min-h-full {
+  min-height: 100% !important;
 }
 
 .min-w-0 {
@@ -14219,12 +14227,20 @@ video {
     min-height: 0 !important;
   }
 
-  .sm\:min-h-full {
-    min-height: 100% !important;
+  .sm\:min-h-1\/4 {
+    min-height: 25% !important;
   }
 
-  .sm\:min-h-screen {
-    min-height: 100vh !important;
+  .sm\:min-h-1\/2 {
+    min-height: 50% !important;
+  }
+
+  .sm\:min-h-3\/4 {
+    min-height: 75% !important;
+  }
+
+  .sm\:min-h-full {
+    min-height: 100% !important;
   }
 
   .sm\:min-w-0 {
@@ -23764,12 +23780,20 @@ video {
     min-height: 0 !important;
   }
 
-  .md\:min-h-full {
-    min-height: 100% !important;
+  .md\:min-h-1\/4 {
+    min-height: 25% !important;
   }
 
-  .md\:min-h-screen {
-    min-height: 100vh !important;
+  .md\:min-h-1\/2 {
+    min-height: 50% !important;
+  }
+
+  .md\:min-h-3\/4 {
+    min-height: 75% !important;
+  }
+
+  .md\:min-h-full {
+    min-height: 100% !important;
   }
 
   .md\:min-w-0 {
@@ -33309,12 +33333,20 @@ video {
     min-height: 0 !important;
   }
 
-  .lg\:min-h-full {
-    min-height: 100% !important;
+  .lg\:min-h-1\/4 {
+    min-height: 25% !important;
   }
 
-  .lg\:min-h-screen {
-    min-height: 100vh !important;
+  .lg\:min-h-1\/2 {
+    min-height: 50% !important;
+  }
+
+  .lg\:min-h-3\/4 {
+    min-height: 75% !important;
+  }
+
+  .lg\:min-h-full {
+    min-height: 100% !important;
   }
 
   .lg\:min-w-0 {
@@ -42854,12 +42886,20 @@ video {
     min-height: 0 !important;
   }
 
-  .xl\:min-h-full {
-    min-height: 100% !important;
+  .xl\:min-h-1\/4 {
+    min-height: 25% !important;
   }
 
-  .xl\:min-h-screen {
-    min-height: 100vh !important;
+  .xl\:min-h-1\/2 {
+    min-height: 50% !important;
+  }
+
+  .xl\:min-h-3\/4 {
+    min-height: 75% !important;
+  }
+
+  .xl\:min-h-full {
+    min-height: 100% !important;
   }
 
   .xl\:min-w-0 {

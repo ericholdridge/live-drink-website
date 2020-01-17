@@ -1,54 +1,47 @@
-let slideImages = document.querySelectorAll('.slide');
-console.log(slideImages);
-let arrowLeft = document.querySelector('.prev');
-let arrowRight = document.querySelector('.next');
-let current = 0;
 
-// Clear all images
-function reset() {
-    for(let i = 0; i < slideImages.length; i++) {
-        slideImages[i].style.display = "none";
-    }
+const track = document.querySelector('.wrap-me');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+const dotsNav = document.querySelector('.slider-wrap');
+const dots = Array.from(dotsNav.children);
+
+// Get slide width depending on browser size
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+// Arrange the slides horizontally next to eachother
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + 'px';
+};
+
+slides.forEach(setSlidePosition);
+
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    currentSlide.classList.remove('current-slide');
+    targetSlide.classList.add('current-slide');
 }
 
-// Init the slider
-function startSlide() {
-    reset();
-    slideImages[0].style.display = "block";
-}
-
-// Show previous
-function slideLeft() {
-    reset();
-    slideImages[current - 1].style.display = "block";
-    current = current - 1;
-}
-
-// Show next
-function slideRight() {
-    reset();
-    slideImages[current + 1].style.display = "block";
-    current++;
-}
-
-arrowLeft.addEventListener('click', function(e) {
+// When user clicks carousel left btn, move slides to right
+prevButton.addEventListener('click', e => {
+    console.log(slideWidth);
     e.preventDefault();
-    if(current === 0) {
-        current = slideImages.length;
-    }
-    slideLeft();
+    const currentSlide = track.querySelector('.current-slide');
+    const previousSlide = currentSlide.previousElementSibling;
+
+    moveToSlide(track, currentSlide, previousSlide);
 });
 
-arrowRight.addEventListener('click', function(e) {
+// When user clicks carousel right btn, move slides to left
+nextButton.addEventListener('click', e => {
+    // Get current slide and next slide
+    console.log(slideWidth);
     e.preventDefault();
-    if(current === slideImages.length - 1) {
-        current = -1;
-    }
-    slideRight();
+    const currentSlide = track.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;
+    
+    moveToSlide(track, currentSlide, nextSlide);
 });
-
-startSlide();
-
 
 
 
