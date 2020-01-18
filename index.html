@@ -7,6 +7,9 @@
     <title>Organic Farm</title>
     <!-- Main Style -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="glider.min.css">
+
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/9808de19ba.js"
@@ -27,20 +30,63 @@
     }
 
     /* Hero Image slide */
-    .wrap-me {
-        transition: transform .6s ease-in;
-    }
     .slide1 {
         background-image: url('./images/slide-1.jpg');
-        transition: transform .6s ease-in;
     }
     .slide2 {
         background-image: url('./images/slide-2.jpg')
-
     }
+    .glider-prev {
+        top: 50%;
+        left: 0;
+        padding: 32px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-right: none;
+        background: rgba(255, 255, 255, 0.3);
+    }
+    .glider-next {
+        top: 50%;
+        right: 0;
+        padding: 32px;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-right: none;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .glider-prev span {
+        position: absolute;
+        letter-spacing: 1.2px;
+        display: block;
+        font-size: 2px;
+        font-weight: bold;
+        top: 22px;
+        left: 8px;
+        border-bottom: 2px solid white;
+        padding: 0 0 4px 0;
+    }
+
+    button:focus  {
+        outline: none;
+    }
+
+    .glider-next span {
+        position: absolute;
+        letter-spacing: 1.2px;
+        display: block;
+        font-size: 2px;
+        font-weight: bold;
+        top: 22px;
+        right: 8px;
+        border-bottom: 2px solid white;
+        padding: 0 0 4px 0;
+    }
+
   </style>
 
   <body>
+      <script src="glider.min.js"></script>
     <!-- Navigation -->
     <nav
       class="fixed z-10 bg-white w-full py-3 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent"
@@ -98,56 +144,54 @@
 
 
     <!-- Hero -->
-    <section class="relative w-full overflow-x-hidden">
-        <div class="prev hidden sm:hidden md:hidden lg:block absolute lg:left-0 z-20" style="transform: translateY(-50%); top: 50%;">
-            <a class="lg:p-5 bg-heroPrevNext lg:rounded-tr-full lg:rounded-br-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1" style="bottom: 4px; right: 4px;">prev</span></a>
-        </div>
-        <div class="wrap-me carousel w-full sm:w-full md:w-full lg:w-full xl:w-full flex-row mx-0 my-0">
-            <!-- Slide 1 -->
-            <div class="slide current-slide slide1 pt-24 hero w-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center">
-                <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
-                    <div class="hero-content text-center text-white sm:text-left xl:pt-24">
-                        <h1 class="pt-1 text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight">
-                            Tasty Way<br />to Healthier Life
-                        </h1>
-                        <p class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12">
-                            Our organic drinks contain all necessary elements and vitamins for
-                            your health.
-                        </p>
+    <section class="relative w-full">
+        <div class="glider-contain relative">
+            <button role="button" aria-label="Previous" class="glider-prev hidden sm:hidden md:hidden lg:block">
+                <span class="text-sm text-white text-lg">prev</span>
+            </button>
+            <div class="glider">
+                <div class="slide current-slide slide1 pt-24 hero w-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center">
+                    <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-12">
+                        <div class="hero-content text-center text-white sm:text-left xl:pt-24">
+                            <h1 class="pt-1 text-3xl font-bold tracking-wider leading-none sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-tight">
+                                Tasty Way<br />to Healthier Life
+                            </h1>
+                            <p class="tracking-widest leading-relaxed my-4 sm:w-6/12 sm:text sm:text-xl sm:tracking-wide xl:w-4/12">
+                                Our organic drinks contain all necessary elements and vitamins for
+                                your health.
+                            </p>
+                        </div>
+                        <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
+                            <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="/shopnow">SHOP NOW</a>
+                        </div>
                     </div>
-                    <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
-                        <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="/shopnow">SHOP NOW</a>
-                    </div>
-                    <div class="slider-wrap flex justify-center pt-4 lg:hidden">
-                        <div class="div rounded-full h-4 w-4 bg-yellow mr-3"></div>
-                        <div class="div rounded-full h-4 w-4 bg-white"></div>
+                </div>
+                <div class="slide slide2 pt-24 hero w-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center">
+                    <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-1">
+                        <div class="hero-content text-center text-white xl:pt-24 md:pt-10">
+                            <h1 class="font-bold text-3xl tracking-wider py-1 sm:text-2xl md:text-4xl lg:text-5xl lg:pt-4">
+                                New Drink, New Day
+                            </h1>
+                            <p class="tracking-widest text-lg pt-1 pb-2 md:text-xl md:px-9 lg:w-10/12 lg:mx-auto lg:pb-3 xl:w-7/12">
+                                With our wide variety of smoothies and healthy drinks, we are sure to help you make the right choice to start your day.
+                            </p>
+                        </div>
+                        <div class="button flex justify-center py-4 sm:justify-center sm:pt-6 py-6 md:pb-10 xl:pb-40">
+                            <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-extrabold tracking-wider text-sm sm:py-4 sm:px-9 md:py-5 md:px-12 lg:py-6 lg:px-14 md:tracking-widest" href="/shopnow">SHOP NOW</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Slide 2 -->
-            <div class="slide slide2 pt-24 hero w-full pt-10 pb-10 bg-no-repeat bg-bottom bg-cover lg:py-48 lg:pb-32 xl:pt-64 xl:pb-64 xl:bg-center absolute top-0 bottom-0">
-                <div class="container mx-auto w-11/12 sm:w-10/12 sm:pt-1">
-                    <div class="hero-content text-center text-white xl:pt-24 md:pt-10">
-                        <h1 class="font-bold text-3xl tracking-wider py-1 sm:text-2xl md:text-4xl lg:text-5xl lg:pt-4">
-                            New Drink, New Day
-                        </h1>
-                        <p class="tracking-widest text-lg pt-1 pb-2 md:text-xl md:px-9 lg:w-10/12 lg:mx-auto lg:pb-3 xl:w-7/12">
-                            With our wide variety of smoothies and healthy drinks, we are sure to help you make the right choice to start your day.
-                        </p>
-                    </div>
-                    <div class="button flex justify-center py-4 sm:justify-center sm:pt-6 py-6 md:pb-10 xl:pb-40">
-                        <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-extrabold tracking-wider text-sm sm:py-4 sm:px-9 md:py-5 md:px-12 lg:py-6 lg:px-14 md:tracking-widest" href="/shopnow">SHOP NOW</a>
-                    </div>
-                    <div class="slider-wrap flex justify-center pt-4 lg:hidden">
-                        <div class="div rounded-full h-4 w-4 bg-yellow mr-3"></div>
-                        <div class="div rounded-full h-4 w-4 bg-white"></div>
-                    </div>
-                </div>
-            </div>
+            <button role="button" aria-label="Next" class="glider-next hidden sm:hidden md:hidden lg:block">
+                <span class="text-sm text-white text-lg">next</span>
+            </button>
         </div>
-    <div class="next hidden sm:hidden md:hidden lg:block absolute lg:right-0 z-0" style="transform: translateY(-50%); top: 50%;">
-        <a class="lg:p-5 bg-heroPrevNext lg:rounded-tl-full lg:rounded-bl-full lg:border-r-0" href=""><span class="relative text-white font-bold tracking-widest border-b-2 pb-1"  style="bottom: 4px; left: 4px;">next</span></a>
-    </div>
+        <div class="w-full absolute bottom-0 pb-4 lg:my-20">
+            <div id="dots" class="glider-dots">
+                <button data-index="0" aria-label="Page 1" class="glider-dot"></button>
+                <button data-index="1" aria-label="Page 2" class="glider-dot"></button>
+            </div>  
+        </div>
     </section>
 
     <!-- Services -->
