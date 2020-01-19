@@ -33,6 +33,7 @@ module.exports = {
                 flavorGray: '#93a6ab',
                 servicesBorder: '#e1e1e1',
                 heroPrevNext: 'rgba(255, 255, 255, 0.3)',
+                navActive: '#f9e95e',
             },
             margin: {
 

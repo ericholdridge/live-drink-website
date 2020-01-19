@@ -8,142 +8,136 @@
     <!-- Main Style -->
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./glider.min.css">
-
     <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/9808de19ba.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/9808de19ba.js" crossorigin="anonymous"></script>
   </head>
 
   <style>
-      /* Hover effect for our team section */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Sticky nav */
+    .nav-bg {
+      background: linear-gradient(to right, #73ba8f 0%, #93d798 100%);
+      box-shadow: 0 0 5px 0 rgba(1, 3, 4, 0.19);
+    }
+
+    /* Hover effect for our team section */
     .test {
-        overflow: hidden !important;
+      overflow: hidden !important;
     }
     .test img {
-        transition: 0.3s ease-in-out !important;
+      transition: 0.3s ease-in-out !important;
     }
     .team:hover img {
-        transform: scale(1.1) !important;
+      transform: scale(1.1) !important;
     }
 
     /* Hero Image slide */
     .slide1 {
-        background-image: url('./images/slide-1.jpg');
+      background-image: url('./images/slide-1.jpg');
     }
     .slide2 {
-        background-image: url('./images/slide-2.jpg')
+      background-image: url('./images/slide-2.jpg')
     }
+
     .glider-prev {
-        top: 50%;
-        left: 0;
-        padding: 32px;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-right: none;
-        background: rgba(255, 255, 255, 0.3);
+      top: 50%;
+      left: 0;
+      padding: 32px;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-right: none;
+      background: rgba(255, 255, 255, 0.3);
     }
     .glider-next {
-        top: 50%;
-        right: 0;
-        padding: 32px;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-        border-right: none;
-        background: rgba(255, 255, 255, 0.3);
+      top: 50%;
+      right: 0;
+      padding: 32px;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-right: none;
+      background: rgba(255, 255, 255, 0.3);
     }
 
     .glider-prev span {
-        position: absolute;
-        letter-spacing: 1.2px;
-        display: block;
-        font-size: 2px;
-        font-weight: bold;
-        top: 22px;
-        left: 8px;
-        border-bottom: 2px solid white;
-        padding: 0 0 4px 0;
+      position: absolute;
+      letter-spacing: 1.2px;
+      display: block;
+      font-size: 2px;
+      font-weight: bold;
+      top: 22px;
+      left: 8px;
+      border-bottom: 2px solid white;
+      padding: 0 0 4px 0;
     }
 
     button:focus  {
-        outline: none;
+      outline: none;
     }
 
     .glider-next span {
-        position: absolute;
-        letter-spacing: 1.2px;
-        display: block;
-        font-size: 2px;
-        font-weight: bold;
-        top: 22px;
-        right: 8px;
-        border-bottom: 2px solid white;
-        padding: 0 0 4px 0;
+      position: absolute;
+      letter-spacing: 1.2px;
+      display: block;
+      font-size: 2px;
+      font-weight: bold;
+      top: 22px;
+      right: 8px;
+      border-bottom: 2px solid white;
+      padding: 0 0 4px 0;
     }
 
+    /* Why Organic Slider Section */
+    .glider-dot.active {
+      background: #76aa6f !important;
+    }
+  
   </style>
 
   <body>
       <script src="./glider.min.js"></script>
     <!-- Navigation -->
-    <nav
-      class="fixed z-10 bg-white w-full py-3 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent"
-    >
-      <div
-        class="container px-4 mx-auto flex justify-between items-center lg:py-4"
-      >
-        <div
-          class="wrap hidden lg:block lg:text-white font-normal tracking-wider"
-        >
-          <p>Call us: +1 (844) 123 4567</p>
-          <p>info@demolink.org</p>
+    <nav class="fixed z-10 bg-white w-full py-3 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent">
+      <div class="container px-4 mx-auto flex justify-between items-center lg:py-4">
+        <div class="wrap hidden lg:block lg:text-white font-normal tracking-wider">
+          <p>Call us: <a href="" class="hover:text-yellow transition-100 transition-ease-in-out">+1 (844) 123 4567</a></p>
+          <p><a href="" class="hover:text-yellow transition-100 transition-ease-in-out">info@demolink.org</a></p>
         </div>
         <div class="div flex items-center">
           <a href=""><i class="fas fa-bars fa-lg lg:hidden"></i></a>
-          <img
-            class="w-32 mx-4 lg:hidden"
-            src="./images/logo-default-3-314x70.png"
-            alt=""
-          />
-          <img
-            class="w-40 mx-4 lg:block"
-            src="./images/logo-inverse-3-314x70.png"
-            alt=""
-          />
+          <a href=""><img class="w-32 mx-4 lg:hidden" src="./images/logo-default-3-314x70.png" alt=""
+          /></a>
+          <a href=""><img class="w-40 mx-4 lg:block" src="./images/logo-inverse-3-314x70.png" alt=""/></a>
         </div>
         <div class="div flex items-center lg:text-white">
           <a href=""><i class="fas fa-search fa-lg"></i></a>
-          <a class="hidden sm:block sm:mx-4" href=""
-            ><i class="fas fa-shopping-cart fa-lg"></i
-          ></a>
-          <div
-            class="circle rounded-full h-8 w-8 mx-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white"
-          >
+          <a class="hidden sm:block sm:mx-4" href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
+          <div class="circle rounded-full h-8 w-8 mx-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white">
             <a class="text-white lg:text-black" href="">en</a>
           </div>
           <a><i class="fas fa-ellipsis-v text-2xl sm:hidden"></i></a>
         </div>
       </div>
-      <div
-        class="container mx-auto hidden sm:hidden md:hidden lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4"
-      >
-        <ul
-          class="flex justify-center py-6 text-white text-sm font-bold tracking-wider"
-        >
-          <li class="mx-5"><a href="/">HOME</a></li>
-          <li class="mx-5"><a href="/">PAGES</a></li>
-          <li class="mx-5"><a href="/">BLOG</a></li>
-          <li class="mx-5"><a href="/">GALLERY</a></li>
-          <li class="mx-5"><a href="/">ELEMENTS</a></li>
-          <li class="mx-5"><a href="/">SHOP</a></li>
-        </ul>
+      <!-- NavBar -->
+      <div class="w-full top-0" id="navbar">
+        <div class="container mx-auto hidden sm:hidden md:hidden lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4" id="nav-container">
+          <ul class="flex justify-center items-center py-6 text-white text-sm font-bold tracking-wider" id="nav">
+            <li class="nav-item mx-5 text-navActive"><a href="#home">HOME</a></li>
+            <li class="nav-item mx-5 hover:text-yellow transition-100 transition-ease-in-out"><a href="#services">SERVICES</a></li>
+            <li class="nav-item mx-5 hover:text-yellow transition-100 transition-ease-in-out"><a href="#flavors">FLAVORS</a></li>
+            <li class="nav-item mx-5 hover:text-yellow transition-100 transition-ease-in-out"><a href="#organic">ORGANIC</a></li>
+            <li class="nav-item mx-5 hover:text-yellow transition-100 transition-ease-in-out"><a href="#testimonials">TESTIMONIALS</a></li>
+            <li class="nav-item mx-5 hover:text-yellow transition-100 transition-ease-in-out"><a href="#team">TEAM</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-
     <!-- Hero -->
-    <section class="relative w-full">
+    <section class="relative w-full" id="home">
         <div class="glider-contain relative">
             <button role="button" aria-label="Previous" class="glider-prev hidden sm:hidden md:hidden lg:block">
                 <span class="text-sm text-white text-lg">prev</span>
@@ -194,10 +188,7 @@
     </section>
 
     <!-- Services -->
-    <section
-      class="w-full bg-center bg-repeat"
-      style="background-image: url('images/bg-pattern-1.jpg');"
-    >
+    <section class="w-full bg-center bg-repeat" id="services" style="background-image: url('images/bg-pattern-1.jpg');">
       <div class="container mx-auto px-4 sm:flex md:py-20">
         <!-- card -->
         <div class="wrap sm:flex sm:flex-col md:w-6/12 xl:w-7/12">
@@ -271,7 +262,7 @@
     </section>
 
     <!-- Flavors -->
-    <section class="w-full">
+    <section class="w-full" id="flavors">
       <h1 class="text-center font-semibold text-3xl pt-8 md:text-4xl md:pt-12 lg:text-5xl xl:pt-24">New Flavors</h1>
       <div
         class="container mx-auto pb-12 pt-4 flex flex-col items-center sm:px-10 sm:flex-wrap sm:flex-row sm:justify-between md:px-24 lg:justify-start lg:pb-40"
@@ -527,93 +518,132 @@
     </section>
 
     <!-- Section Product/Clients -->
-    <section class="w-full">
-        <div class="container mx-auto xl:py-12">
-            <div class="wrap py-12">
-                <div class="wrapper md:flex justify-between md:px-4">
-                    <div class="bg-cover bg-repeat bg-auto bg-center w-6/12 md:w-84 lg:w-96 xl:w-5/12 mx-auto md:mx-0 xl:pb-6" style="background-image:url('./images/bg-pattern-1.jpg');">
-                        <div class="img flex justify-center pt-8 lg:pt-6 ">
-                            <img class="block object-contain h-48 w-56 lg:h-full lg:w-84 xl:h-full xl:w-96" src="./images/product-big-3.png" alt="">
-                        </div>
-                        <p class="text-center uppercase font-bold text-lg lg:pt-4 xl:text-3xl">chili mango</p>
-                        <div class="pricing flex justify-center py-2">
-                            <p class="text-gray line-through mr-2 xl:text-xl">$30.00</p>
-                            <p class="text-green xl:text-xl">$23.00</p>
-                        </div>
-                        <div class="slider flex justify-center pt-2 pb-6">
-                            <div class="circle h-3 w-3 rounded-full bg-green mr-2">
-
-                            </div>
-                            <div class="circle h-3 w-3 rounded-full bg-servicesBorder mr-2">
-                                
-                            </div>
-                            <div class="circle h-3 w-3 rounded-full bg-servicesBorder">
-                                
-                            </div>
-                        </div>
+    <section class="w-full" id="organic">
+      <div class="container mx-auto xl:py-12">
+        <div class="wrap py-12">
+          <div class="wrapper md:flex justify-between md:px-4">
+            <div class="bg-cover bg-repeat bg-auto bg-center w-6/12 md:w-84 lg:w-96 xl:w-5/12 mx-auto md:mx-0 xl:pb-6" style="background-image:url('./images/bg-pattern-1.jpg');">
+                <div class="glider-contain">
+                  <div class="organic-glider">
+                    <!-- Image One -->
+                    <div class="wrap">
+                      <div class="img flex justify-center pt-8 lg:pt-6 ">
+                        <img class="block object-contain h-48 w-56 lg:h-full lg:w-84 xl:h-full xl:w-96" src="./images/product-big-3.png" alt="">
+                      </div>
+                      <p class="text-center uppercase font-bold text-lg lg:pt-4 xl:text-3xl">chili mango</p>
+                      <div class="pricing flex justify-center py-2">
+                        <p class="text-gray line-through mr-2 xl:text-xl">$30.00</p>
+                        <p class="text-green xl:text-xl">$23.00</p>
+                      </div>
                     </div>
-                    <div class="md:w-84 lg:w-7/12 xl:w-7/12 xl:flex xl:flex-col xl:justify-center">
-                        <h1 class="text-center font-bold text-3xl py-6 md:text-left lg:text-left lg:text-5xl tracking-wider xl:px-10">Why Organic?</h1>
-                        <div class="px-2 md:px-0 xl:px-10">
-                            <div class="pb-4 flex items-center pb-2 md:py-6 xl:py-6">
-                                <div class="circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>
-                                <p class="pl-2 font-medium xl:text-xl">Organic drinks contain more antioxidants.</p>
-                            </div>
-                            <div class="py-4 flex items-center py-2 border border-l-0 border-r-0 border-servicesBorder md:py-6 xl:py-6">
-                                <div class="circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>
-                                <p class="pl-2 font-medium xl:text-xl">Organic drinks are better for the environment.</p>
-                            </div>
-                            <div class="pt-4 flex items-center pt-2 md:py-6 xl:py-6">
-                                <div class="circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
-                                    <i class="fas fa-chevron-right"></i>
-                                </div>
-                                <p class="pl-2 font-medium xl:text-xl">They're higher in nutrients.</p>
-                            </div>
-                        </div>
+                    <!-- Image Two -->
+                    <div class="wrap">
+                      <div class="img flex justify-center pt-8 lg:pt-6 ">
+                        <img class="block object-contain h-48 w-56 lg:h-full lg:w-84 xl:h-full xl:w-96" src="./images/product-big-1.png" alt="">
+                      </div>
+                      <p class="text-center uppercase font-bold text-lg lg:pt-4 xl:text-3xl">aurore grape</p>
+                      <div class="pricing flex justify-center py-2">
+                        <p class="text-gray line-through mr-2 xl:text-xl">$18.00</p>
+                        <p class="text-green xl:text-xl">$12.00</p>
+                      </div>
                     </div>
+                    <!-- Image Three -->
+                    <div class="wrap">
+                      <div class="img flex justify-center pt-8 lg:pt-6 ">
+                        <img class="block object-contain h-48 w-56 lg:h-full lg:w-84 xl:h-full xl:w-96" src="./images/product-big-2.png" alt="">
+                      </div>
+                      <p class="text-center uppercase font-bold text-lg lg:pt-4 xl:text-3xl">banana berry</p>
+                      <div class="pricing flex justify-center py-2">
+                        <p class="text-gray line-through mr-2 xl:text-xl">$20.00</p>
+                        <p class="text-green xl:text-xl">$15.00</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="organic-dots" class="glider-dots py-3 sm:py-4">
+                    <button data-index="0" aria-label="Page 1" class="glider-dot"></button>
+                    <button data-index="1" aria-label="Page 2" class="glider-dot"></button>
+                    <button data-index="1" aria-label="Page 3" class="glider-dot"></button>
+                </div> 
                 </div>
-                <div class="px-4 py-6 sm:flex flex-wrap justify-between md:px-4 lg:flex-no-wrap lg:pt-20">
-                    <div class="card text-center border border-servicesBorder py-3 sm:w-72 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
-                            <i class="fas fa-map-marker-alt hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
-                        <div class="wrap md:text-left md:px-4 ">
-                            <i class="fas fa-map-marker-alt text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
-                            <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">free shipping</h3>
-                            <span class="text-gray text-sm pt-4 lg:text-base">Enjoy our fast & free delivery</span>
+            </div>
+            <div class="md:w-84 lg:w-7/12 xl:w-7/12 xl:flex xl:flex-col xl:justify-center">
+                <h1 class="text-center font-bold text-3xl py-6 md:text-left lg:text-left lg:text-5xl tracking-wider xl:px-10">Why Organic?</h1>
+                <div class="px-2 md:px-0 xl:px-10">
+                    <div class="pb-4 pb-2 md:py-6 xl:py-6">
+                      <div class="wrap flex items-center">
+                        <div class="cursor-pointer organic-dropdown-link circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
+                            <i class="fas fa-chevron-right"></i>
                         </div>
+                        <p class="pl-2 font-medium xl:text-xl">Organic drinks contain more antioxidants.</p>
+                      </div>
+                      <p class="organic-hidden hidden text-gray pt-3 pl-1">There are many substances that can act as antioxidants; chief among them are vitamins A and C, as well as beta-carotene and manganese. A lack of antioxidant-rich foods can lead to a greater risk of atherosclerosis.</p>
                     </div>
-                    <div class="card text-center border border-servicesBorder py-3 my-8 sm:w-72 sm:my-0 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
-                        <i class="fas fa-comment-dots hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
-                        <div class="wrap md:text-left md:px-4 ">
-                            <i class="fas fa-comment-dots text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
-                            <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">customer care</h3>
-                            <span class="text-gray text-sm pt-4 lg:text-base">Always ready to help you</span>
+                    <div class="py-4 py-2 border border-l-0 border-r-0 border-servicesBorder md:py-6 xl:py-6">
+                      <div class="flex items-center">
+                        <div class="cursor-pointer organic-dropdown-link wrap circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
+                            <i class="fas fa-chevron-right"></i>
                         </div>
+                        <p class="pl-2 font-medium xl:text-xl">Organic drinks are better for the environment.</p>
+                      </div>
+                      <p class="organic-hidden hidden text-gray pt-3 pl-1">While you’re helping yourself be as healthy as can be, how about helping the environment and your fellow humans? Organic farming practices help conserve water and improve soil quality. Given the droughts we see occurring every year and the dire reports from environmental experts, these are no small reasons to go organic.</p>
                     </div>
-                    <div class="card text-center border border-servicesBorder py-3 sm:w-72 sm:mt-6 md:w-84 md:flex md:items-center md:py-6 lg:mt-0 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
-                        <i class="fas fa-heart hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
-                        <div class="wrap text-center md:px-4 md:text-left">
-                            <i class="fas fa-heart text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
-                            <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">healthy & energetic</h3>
-                            <span class="text-gray text-sm pt-4 lg:text-base">Our drinks are very nutritious.</span>
+                    <div class="pt-4 pt-2 md:py-6 xl:py-6">
+                      <div class="wrap flex items-center">
+                        <div class="cursor-pointer organic-dropdown-link circle h-8 w-8 xl:h-10 xl:w-10 rounded-full border-2 border-servicesBorder shadow-md flex justify-center items-center text-green">
+                            <i class="fas fa-chevron-right"></i>
                         </div>
+                        <p class="pl-2 font-medium xl:text-xl">They're higher in nutrients.</p>
+                      </div>
+                      <p class="organic-hidden hidden text-gray pt-3 pl-1">Along with fewer pesticides, this is probably the No. 1 reason folks decide to eat organic. Studies have shown that organic drinks are often higher in vitamin C, iron, magnesium, and phosphorous than their non-organic counterparts.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="px-4 py-6 sm:flex flex-wrap justify-between md:px-4 lg:flex-no-wrap lg:pt-20">
+            <div class="card text-center border border-servicesBorder py-3 sm:w-72 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
+                    <i class="fas fa-map-marker-alt hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
+                <div class="wrap md:text-left md:px-4 ">
+                    <i class="fas fa-map-marker-alt text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
+                    <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">free shipping</h3>
+                    <span class="text-gray text-sm pt-4 lg:text-base">Enjoy our fast & free delivery</span>
+                </div>
+            </div>
+            <div class="card text-center border border-servicesBorder py-3 my-8 sm:w-72 sm:my-0 md:w-84 md:flex md:items-center md:py-6 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
+                <i class="fas fa-comment-dots hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
+                <div class="wrap md:text-left md:px-4 ">
+                    <i class="fas fa-comment-dots text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
+                    <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">customer care</h3>
+                    <span class="text-gray text-sm pt-4 lg:text-base">Always ready to help you</span>
+                </div>
+            </div>
+            <div class="card text-center border border-servicesBorder py-3 sm:w-72 sm:mt-6 md:w-84 md:flex md:items-center md:py-6 lg:mt-0 lg:w-72 lg:flex-col xl:py-10 xl:flex-row xl:w-96">
+                <i class="fas fa-heart hidden sm:hidden md:hidden text-4xl text-green pb-1 md:px-4 lg:hidden xl:block xl:pl-4 xl:pr-0 xl:text-5xl"></i>
+                <div class="wrap text-center md:px-4 md:text-left">
+                    <i class="fas fa-heart text-4xl text-green pb-1 lg:block lg:px-0 lg:text-5xl lg:pb-2 xl:hidden"></i>
+                    <h3 class="font-bold uppercase tracking-wider lg:text-lg lg:pb-1">healthy & energetic</h3>
+                    <span class="text-gray text-sm pt-4 lg:text-base">Our drinks are very nutritious.</span>
+                </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- What people say -->
-    <section class="w-full bg-repeat bg-center bg-auto" style="background-image: url('./images/bg-pattern-1.jpg');">
+    <section class="w-full bg-repeat bg-center bg-auto" style="background-image: url('./images/bg-pattern-1.jpg');" id="testimonials">
         <div class="container mx-auto px-4 py-10 relative md:py-20 lg:pb-32">
             <div class="previous absolute left-0 ml-4" style="transform: translateY(50%); top: 50%;">
                 <span class="text-sm font-bold tracking-wider text-gray border-b-2 border-gray py-1 md:hidden">prev</span> 
              </div>
             <h3 class="text-center font-bold capitalize text-3xl tracking-wide xl:text-6xl">What people say</h3>
-            <p class="text-center text-gray text-lg py-6 leading-loose tracking-wider sm:pb-10 md:text-xl">Your healthy drinks have a wonderful taste and the amazing selection of their flavors is what really attracts me in your store. Thank you for fast delivery and your fresh drinks!</p>
+
+             <div class="glider-contain">
+               <div class="glider-people-say">
+                <p class="text-center text-gray text-lg py-6 leading-loose tracking-wider sm:pb-10 md:text-xl">Your healthy drinks have a wonderful taste and the amazing selection of their flavors is what really attracts me in your store. Thank you for fast delivery and your fresh drinks!</p>
+                <p class="text-center text-gray text-lg py-6 leading-loose tracking-wider sm:pb-10 md:text-xl">I am amazed and extremely satisfied by your smoothies, their taste, and the customer service you provide to unexperienced clients who know nothing about organic drinks.</p>
+                <p class="text-center text-gray text-lg py-6 leading-loose tracking-wider sm:pb-10 md:text-xl">I’m very grateful to you for introducing me and my whole family to your extensive range of smoothies and organic juices. We are true fans and regular customers of your store!</p>
+               </div>
+             </div>
             <div class="wrap flex justify-center">
                 <div class="images text-center py-1 md:flex md:py-0 justify-between md:w-8/12 xl:w-6/12">
                     <div class="opacity-50 hover:opacity-100 cursor-pointer saying block sm:block md:block transition-250 transition-ease-in-out">
@@ -662,7 +692,7 @@
     </section>
 
     <!-- Our Team -->
-    <section class="w-full">
+    <section class="w-full" id="team">
         <h1 class="capitalize font-medium text-3xl text-center tracking-wide pt-10 md:pt-20 md:text-4xl xl:text-6xl xl:pb-8">our team</h1>
         <div class="container mx-auto py-6 md:px-6 flex justify-center xl:pb-20">
             <div class="team w-100 sm:mr-8 max-w-custom280">
@@ -677,7 +707,7 @@
                     <a href=""><i class="fab fa-facebook-f mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                     <a href=""><i class="fab fa-twitter mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                     <a href=""><i class="fab fa-instagram mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
-                    <a href=""><i class="fab fa-google-plus-g mx- hover:text-green transition-100 transition-ease-in-out"></i></a>
+                    <a href=""><i class="fab fa-google-plus-g hover:text-green transition-100 transition-ease-in-out"></i></a>
                 </div>
                 <div class="slider flex justify-center py-4 sm:hidden">
                     <div class="dot h-4 w-4 rounded-full bg-green mx-1"></div>
