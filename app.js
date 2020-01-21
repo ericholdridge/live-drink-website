@@ -1,14 +1,35 @@
+// NEED TO FIX: Start on mobile view, the id="navbar" has an offsetTop of 0px. 
+// If we click the mobile menu to view nav links and then expand the screen 
+// The nav ALWAYS has a top position of zero, therefore the myFunction checks the first condition 
+// which always evalutes to true. 
+
+// Can we possibly add pixes to the line 28??? 
+
+
+
+
 /* --------- Nav Section ---------- */
+// Mobile dropdown menu
+let mobileNav = document.querySelector('.mobile-nav');
+let mobileMenu = document.getElementById('bars');
+
+mobileMenu.addEventListener('click', function(e){
+  e.preventDefault();
+  mobileNav.classList.toggle('hidden');
+});
+
 // Sticky scroll to nav
-window.onscroll = function() {
-  myFunction();
-};
+  window.onscroll = function() {
+    myFunction();
+  }
 
 let navbar = document.getElementById("navbar");
 let navContainer = document.getElementById("nav-container");
 let sticky = navbar.offsetTop;
+console.log(sticky)
 
 function myFunction() {
+  // If user scrolls to the top part of the nav
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("fixed");
     navbar.classList.add("nav-bg");
@@ -26,7 +47,6 @@ function myFunction() {
 
 // Change the active state on nav-items
 var ulContainer = document.getElementById("nav");
-
 var navItems = ulContainer.getElementsByClassName("nav-item");
 
 for (var i = 0; i < navItems.length; i++) {
