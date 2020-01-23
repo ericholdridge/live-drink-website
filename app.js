@@ -13,6 +13,7 @@ let navbar = document.getElementById("navbar");
 let navContainer = document.getElementById("nav-container");
 
 function obCallback(payload) {
+  // If the prevnav is completely hidden
   if(!payload[0].isIntersecting) {
     navbar.classList.add("fixed");
     navbar.classList.add("nav-bg");
@@ -20,7 +21,7 @@ function obCallback(payload) {
     navContainer.classList.remove("lg:border-b");
     navContainer.classList.remove("xl:mt-4");
   } 
-  else {
+  else { // If the prenav is shown
     navbar.classList.remove("fixed");
     navbar.classList.remove("nav-bg");
     navContainer.classList.add("lg:border-t");
@@ -30,7 +31,7 @@ function obCallback(payload) {
 }
 
 const ob = new IntersectionObserver(obCallback);
-ob.observe(prenav)
+ob.observe(prenav) // Observes the prenav
 
 // Change the active state on nav-items
 var ulContainer = document.getElementById("nav");
@@ -54,6 +55,43 @@ for(let i = 0; i < dropdown.length; i++) {
     dropdownHidden[i].classList.toggle("hidden");
   });
 }
+
+/* ------- Our Team Section --------- */
+// Scroll to top functionality 
+const teamSection = document.getElementById("team");
+const upArrow = document.getElementById("upArrow");
+
+function showUpArrow(element) {
+  // If the team section container is completely hidden
+  if(element[0].isIntersecting) {
+    let op = 0.1;  // initial opacity
+    upArrow.style.display = 'block';
+    let timer = setInterval(function () {
+      if (op >= 1){
+        clearInterval(timer);
+    }
+    upArrow.style.opacity = op;
+    upArrow.style.filter = 'alpha(opacity=' + op * 100 + ")";
+    op += op * 0.1;
+  }, 10);
+    upArrow.classList.remove("hidden");
+  } 
+  else { // If the team section container is shown
+    let op = 1;  // initial opacity
+    let timer = setInterval(function () {
+      if (op <= 0.1){
+        clearInterval(timer);
+        upArrow.style.display = 'none';
+      }
+      upArrow.style.opacity = op;
+      upArrow.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op -= op * 0.1;
+    }, 5);
+  }
+}
+
+const observer = new IntersectionObserver(showUpArrow);
+observer.observe(teamSection) // Observes the prenav
 
 /* -------- Sliders --------- */
 // Home page carousel slider
@@ -87,3 +125,50 @@ new Glider(document.querySelector('.glider-people-say'), {
     duration: 0.25,
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

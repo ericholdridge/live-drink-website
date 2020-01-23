@@ -18,6 +18,16 @@
       scroll-behavior: smooth;
     }
 
+    .card-flavor .cart {
+      transition: opacity .3s;
+    }
+
+    .card-flavor:hover .cart {
+      display: flex !important;
+      opacity: 1 !important;
+    }
+
+
     /* Sticky nav */
     .nav-bg {
       background: linear-gradient(to right, #73ba8f 0%, #93d798 100%);
@@ -263,17 +273,10 @@
     <!-- Flavors -->
     <section class="w-full" id="flavors">
       <h1 class="text-center font-semibold text-3xl pt-8 md:text-4xl md:pt-12 lg:text-5xl xl:pt-24">New Flavors</h1>
-      <div
-        class="container mx-auto pb-12 pt-4 flex flex-col items-center sm:px-10 sm:flex-wrap sm:flex-row sm:justify-between md:px-24 lg:justify-start lg:pb-40"
-      >
+      <div class="container mx-auto pb-12 pt-4 flex flex-col items-center sm:px-10 sm:flex-wrap sm:flex-row sm:justify-between md:px-24 lg:justify-start lg:pb-40">
         <!-- card -->
-        <div
-          class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out h-auto"
-        >
-          <span
-            class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md"
-            >sale</span
-          >
+        <div class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+          <span class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md">sale</span>
           <div class="flex justify-center">
             <img class="block h-48 w-32 object-contain" src="./images/product-1.png" alt="" />
           </div>
@@ -282,27 +285,18 @@
             <p class="mr-3 text-gray line-through">$30.00</p>
             <p class="text-green">$23.00</p>
           </div>
-          <div class="flavor-btns wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 flex justify-center pt-4">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div><!-- End card-->
         <!-- card -->
-        <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out h-auto"
-        >
-          <span
-            class="absolute right-0 mr-4 rounded-lg px-3 text-white bg-flavorGray uppercase font-bold text-md"
-            >new</span
-          >
+        <div class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+          <span class="absolute right-0 mr-4 rounded-lg px-3 text-white bg-flavorGray uppercase font-bold text-md">new</span>
           <div class="flex justify-center">
             <img class="block h-48 w-32 object-contain" src="./images/product-2.png" alt="" />
           </div>
@@ -310,24 +304,18 @@
           <div class="pricing flex justify-center">
             <p class="text-green">$13.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div>
         <!-- End card-->
         <!-- card -->
-        <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
-        >
+        <div class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
           <!-- <span class="absolute right-0 mr-4 rounded-lg bg-black px-4 text-white bg-red uppercase font-bold text-md">sale</span> -->
           <div class="flex justify-center">
             <img class="block h-48 w-32 object-contain" src="./images/product-3.png" alt="" />
@@ -336,27 +324,18 @@
           <div class="pricing flex justify-center">
             <p class="text-green">$17.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div><!-- End card-->
         <!-- card -->
-        <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
-        >
-          <span
-            class="absolute right-0 mr-4 bg-flavorGray rounded-lg px-3 text-white bg-red uppercase font-bold text-md"
-            >new</span
-          >
+        <div class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+          <span class="absolute right-0 mr-4 bg-flavorGray rounded-lg px-3 text-white bg-red uppercase font-bold text-md">new</span>
           <div class="flex justify-center">
             <img class="block h-48 w-32 object-contain" src="./images/product-7.png" alt="" />
           </div>
@@ -364,27 +343,18 @@
           <div class="pricing flex justify-center">
             <p class="text-green">$13.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div><!-- End card-->
         <!-- card -->
-        <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 xl:ml-0 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
-        >
-          <span
-            class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-flavorGray uppercase font-bold text-md"
-            >new</span
-          >
+        <div class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 xl:ml-0 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out">
+          <span class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-flavorGray uppercase font-bold text-md">new</span>
           <div class="flex justify-center">
             <img class="block h-48 w-32 object-contain" src="./images/product-4.png" alt="" />
           </div>
@@ -392,22 +362,18 @@
           <div class="pricing flex justify-center">
             <p class="text-green">$13.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div><!-- End card-->
         <!-- card -->
         <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
+          class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
         >
           <!-- <span class="absolute right-0 mr-4 rounded-lg bg-black px-4 text-white bg-red uppercase font-bold text-md">sale</span> -->
           <div class="flex justify-center">
@@ -417,22 +383,18 @@
           <div class="pricing flex justify-center">
             <p class="text-green">$17.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div><!-- End card-->
         <!-- card -->
         <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
+          class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 xl:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
         >
           <span
             class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md"
@@ -448,22 +410,18 @@
             <p class="mr-3 text-gray line-through">$30.00</p>
             <p class="text-green">$23.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
         </div><!-- End card-->
         <!-- card -->
         <div
-          class="bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
+          class="card-flavor bg-flavorBgColor w-72 py-6 rounded-lg mt-6 relative sm:w-64 lg:ml-4 lg:py-10 shadow-none hover:shadow-2xl transition-500 transition-ease-in-out"
         >
           <span
             class="absolute right-0 mr-4 rounded-lg bg-black px-3 text-white bg-red uppercase font-bold text-md"
@@ -476,15 +434,11 @@
           <div class="pricing flex justify-center">
             <p class="text-green">$17.00</p>
           </div>
-          <div class="wrap flex justify-center pt-4 lg:hidden">
-            <div
-              class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6"
-            >
+          <div class="cart opacity-100 lg:opacity-25 wrap flex justify-center pt-4 lg:flex">
+            <div class="search bg-yellow w-12 h-12 rounded-full flex justify-center items-center mr-6">
               <a href=""><i class="fas fa-search fa-lg"></i></a>
             </div>
-            <div
-              class="cart bg-green w-12 h-12 rounded-full flex justify-center items-center text-white"
-            >
+            <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
               <a href=""><i class="fas fa-shopping-cart fa-lg"></i></a>
             </div>
           </div>
@@ -691,9 +645,12 @@
     </section>
 
     <!-- Our Team -->
-    <section class="w-full" id="team">
+    <section class="w-full relative">
+      <div class="right-container absolute w-24 z-20 hidden" id="upArrow" style="right: 20px;">
+          <a href="#home" style="right: 20px;"><i class="text-white fas fa-arrow-up text-xl h-16 w-16 fixed bg-green rounded-full flex items-center justify-center" style="bottom: 20px;"></i></a>
+      </div>
         <h1 class="capitalize font-medium text-3xl text-center tracking-wide pt-10 md:pt-20 md:text-4xl xl:text-6xl xl:pb-8">our team</h1>
-        <div class="container mx-auto py-6 md:px-6 flex justify-center xl:pb-20">
+        <div class="container mx-auto py-6 md:px-6 flex justify-center xl:pb-20" id="team">
             <div class="team w-100 sm:mr-8 max-w-custom280">
                 <div class="test">
                     <a href=""><img class="team-image block w-full" src="./images/team-4.jpg" alt=""></a>
@@ -708,12 +665,6 @@
                     <a href=""><i class="fab fa-instagram mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                     <a href=""><i class="fab fa-google-plus-g hover:text-green transition-100 transition-ease-in-out"></i></a>
                 </div>
-                <div class="slider flex justify-center py-4 sm:hidden">
-                    <div class="dot h-4 w-4 rounded-full bg-green mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                </div>
             </div>
             <div class="team hidden sm:block w-100  md:mr-8 max-w-custom280">
                 <div class="test">
@@ -722,18 +673,6 @@
                 <div class="text-center">
                     <p class="cursor-pointer font-medium py-3 tracking-wide lg:text-lg lg:pt-8 hover:text-green transition-100 transition-ease-in-out">Peter McMillan</p>
                     <p class="px-2 text-sm text-gray sm:px-6 md:text-base md:px-2">Peter is the Head of Livedrink’s Supply Chain</p>
-                </div>
-                <div class="social-icons py-3 text-lg text-center">
-                    <a href=""><i class="fab fa-facebook-f mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
-                    <a href=""><i class="fab fa-twitter mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
-                    <a href=""><i class="fab fa-instagram mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
-                    <a href=""><i class="fab fa-google-plus-g mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
-                </div>
-                <div class="slider flex justify-center py-4 sm:hidden">
-                    <div class="dot h-4 w-4 rounded-full bg-green mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
                 </div>
             </div>
             <div class="team hidden sm:hidden md:block w-100 lg:mr-8 max-w-custom280">
@@ -750,12 +689,6 @@
                     <a href=""><i class="fab fa-instagram mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                     <a href=""><i class="fab fa-google-plus-g mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                 </div>
-                <div class="slider flex justify-center py-4 sm:hidden">
-                    <div class="dot h-4 w-4 rounded-full bg-green mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                </div>
             </div>
             <div class="team hidden sm:hidden md:hidden lg:block w-100 max-w-custom280">
                 <div class="test">
@@ -771,20 +704,9 @@
                     <a href=""><i class="fab fa-instagram mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                     <a href=""><i class="fab fa-google-plus-g mx-2 hover:text-green transition-100 transition-ease-in-out"></i></a>
                 </div>
-                <div class="slider flex justify-center py-4 sm:hidden">
-                    <div class="dot h-4 w-4 rounded-full bg-green mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                    <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-                </div>
             </div>
         </div>
-        <div class="hidden slider flex justify-center py-4 sm:flex sm:items-center md:pb-20 xl:hidden">
-            <div class="dot h-4 w-4 rounded-full bg-green mx-1"></div>
-            <div class="dot h-4 w-4 rounded-full bg-servicesBorder mx-1"></div>
-        </div>
     </section>
-
     <script src="app.js"></script>
   </body>
 </html>
