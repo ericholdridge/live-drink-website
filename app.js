@@ -11,6 +11,8 @@ mobileMenu.addEventListener('click', function(e){
 let prenav = document.getElementById("prenav");
 let navbar = document.getElementById("navbar");
 let navContainer = document.getElementById("nav-container");
+let navbarLogo = document.getElementById('logo');
+let shoppingCart = document.getElementById('shoppingCart');
 
 function obCallback(payload) {
   // If the prevnav is completely hidden
@@ -20,6 +22,8 @@ function obCallback(payload) {
     navContainer.classList.remove("lg:border-t");
     navContainer.classList.remove("lg:border-b");
     navContainer.classList.remove("xl:mt-4");
+    navbarLogo.classList.remove("hidden");
+    shoppingCart.classList.remove("hidden");
   } 
   else { // If the prenav is shown
     navbar.classList.remove("fixed");
@@ -27,6 +31,8 @@ function obCallback(payload) {
     navContainer.classList.add("lg:border-t");
     navContainer.classList.add("lg:border-b");
     navContainer.classList.add("xl:mt-4");
+    navbarLogo.classList.add("hidden");
+    shoppingCart.classList.add("hidden");
   }
 }
 
