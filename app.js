@@ -2,6 +2,19 @@
 // Mobile dropdown menu
 let mobileNav = document.querySelector('.mobile-nav');
 let mobileMenu = document.getElementById('bars');
+const ellipsisIcon = document.querySelector('.fa-ellipsis-v');
+const ellipsis = document.getElementById('ellipsis');
+
+// Show and hide the ellipsis menu on mobile
+ellipsisIcon.addEventListener('click', (e) => {
+  e.preventDefault();
+  ellipsis.classList.toggle('hidden');
+});
+
+ellipsis.addEventListener('click', (e) => {
+  e.preventDefault();
+  ellipsis.classList.toggle("hidden");
+})
 
 mobileMenu.addEventListener('click', function(e){
   e.preventDefault();
