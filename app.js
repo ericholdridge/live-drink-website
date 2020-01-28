@@ -26,6 +26,14 @@ let navbar = document.getElementById("navbar");
 let navContainer = document.getElementById("nav-container");
 let navbarLogo = document.getElementById('logo');
 let shoppingCart = document.getElementById('shoppingCart');
+let lgViewCartIcon = document.querySelector('.lg-cart-nav');
+let cart_icon_lg_screen = document.querySelector('.cart-icon-lg-screen');
+
+cart_icon_lg_screen.addEventListener('click', () => {
+  ellipsis.classList.toggle("lg:block");
+  ellipsis.classList.toggle("md:block");
+  ellipsis.classList.toggle("sm:block");
+})
 
 function obCallback(payload) {
   // If the prevnav is completely hidden
@@ -37,6 +45,7 @@ function obCallback(payload) {
     navContainer.classList.remove("xl:mt-4");
     navbarLogo.classList.remove("hidden");
     shoppingCart.classList.remove("hidden");
+    lgViewCartIcon.classList.remove('hidden');
   } 
   else { // If the prenav is shown
     navbar.classList.remove("fixed");
@@ -46,6 +55,7 @@ function obCallback(payload) {
     navContainer.classList.add("xl:mt-4");
     navbarLogo.classList.add("hidden");
     shoppingCart.classList.add("hidden");
+    lgViewCartIcon.classList.add('hidden');
   }
 }
 
@@ -144,6 +154,8 @@ new Glider(document.querySelector('.glider-people-say'), {
     duration: 0.25,
   }
 });
+
+// 2:28
 
 
 

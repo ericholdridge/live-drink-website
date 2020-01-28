@@ -6,7 +6,7 @@
       },
       "fields": {
         "title": "MANGO",
-        "price": 23.0,
+        "price": "23.00",
         "image": {
           "fields": {
             "file": {
@@ -22,7 +22,7 @@
       },
       "fields": {
         "title": "STRAWBERRY",
-        "price": 13.0,
+        "price": "13.00",
         "image": {
           "fields": {
             "file": {
@@ -38,7 +38,7 @@
       },
       "fields": {
         "title": "APPLE",
-        "price": 17.0,
+        "price": "17.00",
         "image": {
           "fields": {
             "file": {
@@ -54,7 +54,7 @@
       },
       "fields": {
         "title": "CARROTS",
-        "price": 13.0,
+        "price": "13.00",
         "image": {
           "fields": {
             "file": {
@@ -70,7 +70,7 @@
       },
       "fields": {
         "title": "GUAVO",
-        "price": 13.0,
+        "price": "13.00",
         "image": {
           "fields": {
             "file": {
@@ -86,7 +86,7 @@
       },
       "fields": {
         "title": "GRAPES",
-        "price": 17.0,
+        "price": "17.0",
         "image": {
           "fields": {
             "file": {
@@ -102,7 +102,7 @@
       },
       "fields": {
         "title": "BANANAS",
-        "price": 23.0,
+        "price": "23.0",
         "image": {
           "fields": {
             "file": {
@@ -118,7 +118,7 @@
       },
       "fields": {
         "title": "ORANGE",
-        "price": 23.0,
+        "price": "23.00",
         "image": {
           "fields": {
             "file": {

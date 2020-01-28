@@ -563,7 +563,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /**
@@ -3027,6 +3027,18 @@ video {
   clear: both !important;
 }
 
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.font-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
+}
+
+.font-mono {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
 .font-hairline {
   font-weight: 100 !important;
 }
@@ -4667,12 +4679,8 @@ video {
   margin-left: -1px !important;
 }
 
-.max-h-full {
-  max-height: 100% !important;
-}
-
-.max-h-screen {
-  max-height: 100vh !important;
+.max-h-1\/2 {
+  max-height: 50% !important;
 }
 
 .max-w-1\/4 {
@@ -12659,6 +12667,18 @@ video {
     clear: both !important;
   }
 
+  .sm\:font-sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  }
+
+  .sm\:font-serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
+  }
+
+  .sm\:font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
   .sm\:font-hairline {
     font-weight: 100 !important;
   }
@@ -14299,12 +14319,8 @@ video {
     margin-left: -1px !important;
   }
 
-  .sm\:max-h-full {
-    max-height: 100% !important;
-  }
-
-  .sm\:max-h-screen {
-    max-height: 100vh !important;
+  .sm\:max-h-1\/2 {
+    max-height: 50% !important;
   }
 
   .sm\:max-w-1\/4 {
@@ -22292,6 +22308,18 @@ video {
     clear: both !important;
   }
 
+  .md\:font-sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  }
+
+  .md\:font-serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
+  }
+
+  .md\:font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
   .md\:font-hairline {
     font-weight: 100 !important;
   }
@@ -23932,12 +23960,8 @@ video {
     margin-left: -1px !important;
   }
 
-  .md\:max-h-full {
-    max-height: 100% !important;
-  }
-
-  .md\:max-h-screen {
-    max-height: 100vh !important;
+  .md\:max-h-1\/2 {
+    max-height: 50% !important;
   }
 
   .md\:max-w-1\/4 {
@@ -31925,6 +31949,18 @@ video {
     clear: both !important;
   }
 
+  .lg\:font-sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  }
+
+  .lg\:font-serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
+  }
+
+  .lg\:font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
   .lg\:font-hairline {
     font-weight: 100 !important;
   }
@@ -33565,12 +33601,8 @@ video {
     margin-left: -1px !important;
   }
 
-  .lg\:max-h-full {
-    max-height: 100% !important;
-  }
-
-  .lg\:max-h-screen {
-    max-height: 100vh !important;
+  .lg\:max-h-1\/2 {
+    max-height: 50% !important;
   }
 
   .lg\:max-w-1\/4 {
@@ -41558,6 +41590,18 @@ video {
     clear: both !important;
   }
 
+  .xl\:font-sans {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  }
+
+  .xl\:font-serif {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif !important;
+  }
+
+  .xl\:font-mono {
+    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  }
+
   .xl\:font-hairline {
     font-weight: 100 !important;
   }
@@ -43198,12 +43242,8 @@ video {
     margin-left: -1px !important;
   }
 
-  .xl\:max-h-full {
-    max-height: 100% !important;
-  }
-
-  .xl\:max-h-screen {
-    max-height: 100vh !important;
+  .xl\:max-h-1\/2 {
+    max-height: 50% !important;
   }
 
   .xl\:max-w-1\/4 {

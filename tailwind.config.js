@@ -18,9 +18,9 @@ module.exports = {
             '1/2': '50%',
             '3/4': '75%',
             'full': '100%',
-            }, 
-        fontFamily: {
-
+        },
+        maxHeight: {
+            '1/2': '50%',
         },
         extend: {
             colors: {
@@ -40,6 +40,9 @@ module.exports = {
             },
             height: {
                 half: '50%',
+            },
+            width: {
+                '1/4': '25%',
             },
             spacing: {
                 '72': '18rem',

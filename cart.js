@@ -6,9 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartTotal = document.querySelector('.cart-total');
     const cartContent = document.querySelector('.cart-content');
     const productsDOM = document.querySelector('.products-center');
+    const btns = document.querySelectorAll('.bag-btn');
 
     // Cart
     let cart = [];
+    // Buttons
+    let buttonsDOM = [];
 
     // Getting the products
     class Products{
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                        <a href="" data-id=${products[0].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                        <a href="" data-id=${products[0].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                     </div>
                 </div>
@@ -71,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                        <a href="" data-id=${products[1].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                        <a href="" data-id=${products[1].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                     </div>
                 </div>
@@ -90,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                      <a href="" data-id=${products[2].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                      <a href="" data-id=${products[2].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                      <a href="" data-id=${products[3].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                      <a href="" data-id=${products[3].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -130,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                      <a href="" data-id=${products[4].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                      <a href="" data-id=${products[4].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -150,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                      <a href="" data-id=${products[5].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                      <a href="" data-id=${products[5].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -171,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                      <a href="" data-id=${products[6].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                      <a href="" data-id=${products[6].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -191,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       <a href=""><i class="fas fa-search fa-lg"></i></a>
                     </div>
                     <div class="bg-green w-12 h-12 rounded-full flex justify-center items-center text-white">
-                      <a href="" data-id=${products[7].id}><i class="fas fa-shopping-cart fa-lg"></i></a>
+                      <a href="" data-id=${products[7].id} class="bag-btn"><i class="fas fa-shopping-cart fa-lg"></i></a>
                     </div>
                   </div>
                 </div>
@@ -199,18 +202,92 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
             productsDOM.innerHTML = result;
         }
+        getBagButtons(){
+          // Puts buttons into an array
+          const buttons = [...document.querySelectorAll('.bag-btn')];
+          buttonsDOM = buttons;
+          buttons.forEach(button => {
+            let id = button.dataset.id;
+            let inCart = cart.find(item => item.id === id);
+            if(inCart) {
+              button.innertext = "In Cart";
+              button.disabled = true;
+            }
+              button.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.target.innertext = "In Cart";
+                event.target.disabled = true;
+                // Get product from products
+                let cartItem = {...Storage.getProduct(id), amount:1}; 
+                // Add product to the cart
+                cart = [...cart, cartItem];
+                // Save the cart in local storage
+                Storage.saveCart(cart);
+                // Set cart values
+                this.setCartValues(cart);
+                // Display cart item
+                this.addCartItem(cartItem);
+                // Show the cart
+            
+              });
+          });
+        }
+        setCartValues(cart) {
+          let tempTotal = 0;
+          let itemsTotal = 0;
+          cart.map(item => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+          })
+          cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+          cartItems.innerText = itemsTotal;
+        }
+        addCartItem(item) {
+          const div = document.createElement('div');
+          div.classList.add('cart-items');
+          div.classList.add('flex');
+          div.classList.add('items-center');
+          div.innerHTML = `
+          <img class="block h-32" src=${item.image} alt="">
+          <div class="px-2 py-12 text-left">
+            <h4 class="uppercase">${item.title}</h4>
+            <h5 class="text-green">$${item.price}</h5>
+            <span class="remove-item text-sm text-gray" data-id=${item.id}><a href="">remove</a></span>
+          </div>
+          <div class="mx-4 text-black">
+            <a href=""><i class="fas fa-chevron-up" data-id=${item.id}></i></a>
+            <p class="item-amount">${item.amount}</p>
+            <a href=""><i class="fas fa-chevron-down" data-id=${item.id}></i></a>
+          </div>
+          `;
+          cartContent.appendChild(div);
+        }
     }
 
     // Local storage
     class Storage {
-
+      static saveProducts(products) {
+        localStorage.setItem("products", JSON.stringify(products));
+      }
+      static getProduct(id) {
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find(product => product.id === id);
+      }
+      static saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
     }
 
     const ui = new UI();
     const products = new Products();
 
     // Get all of the products
-    products.getProducts().then(products => ui.displayProducts(products));
+    products.getProducts().then(products => {
+      ui.displayProducts(products);
+      Storage.saveProducts(products);
+    }).then(() => {
+      ui.getBagButtons();
+    });
 });
 
 // 1:45
