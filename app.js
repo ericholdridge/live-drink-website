@@ -28,15 +28,18 @@ let navbarLogo = document.getElementById('logo');
 let shoppingCart = document.getElementById('shoppingCart');
 let lgViewCartIcon = document.querySelector('.lg-cart-nav');
 let cart_icon_lg_screen = document.querySelector('.cart-icon-lg-screen');
+let cartItems = document.querySelector('.cart-items');
+let shoppingStaticNav = document.getElementById('shoppingStaticNav');
+let shoppingScrolled = document.getElementById('shoppingScrolled');
 
 cart_icon_lg_screen.addEventListener('click', () => {
   ellipsis.classList.toggle("lg:block");
   ellipsis.classList.toggle("md:block");
   ellipsis.classList.toggle("sm:block");
-})
+});
 
 function obCallback(payload) {
-  // If the prevnav is completely hidden
+  // If the page is scrolled and the prenav is hidden 
   if(!payload[0].isIntersecting) {
     navbar.classList.add("fixed");
     navbar.classList.add("nav-bg");
@@ -46,6 +49,8 @@ function obCallback(payload) {
     navbarLogo.classList.remove("hidden");
     shoppingCart.classList.remove("hidden");
     lgViewCartIcon.classList.remove('hidden');
+    shoppingStaticNav.classList.remove('cart-items');
+    shoppingScrolled.classList.add('cart-items');
   } 
   else { // If the prenav is shown
     navbar.classList.remove("fixed");
@@ -56,6 +61,7 @@ function obCallback(payload) {
     navbarLogo.classList.add("hidden");
     shoppingCart.classList.add("hidden");
     lgViewCartIcon.classList.add('hidden');
+    cartItems.classList.add('cart-items');
   }
 }
 

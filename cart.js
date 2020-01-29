@@ -2,11 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearCart = document.querySelector('.clear-cart');
     const cartDOM = document.querySelector('.cart');
     const cartOverlay = document.querySelector('.cart-overlay');
-    const cartItems = document.querySelector('.cart-items');
+    let cartItems = document.querySelector('.cart-items');
     const cartTotal = document.querySelector('.cart-total');
     const cartContent = document.querySelector('.cart-content');
     const productsDOM = document.querySelector('.products-center');
     const btns = document.querySelectorAll('.bag-btn');
+    const shoppingScrolled = document.getElementById('shoppingScrolled');
+    
+    
 
     // Cart
     let cart = [];
@@ -228,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Display cart item
                 this.addCartItem(cartItem);
                 // Show the cart
-            
               });
           });
         }
@@ -241,6 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
           })
           cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
           cartItems.innerText = itemsTotal;
+          if(shoppingScrolled.classList.contains('cart-items')) {
+            shoppingScrolled.innerText = cartItems.innerText;
+          }
         }
         addCartItem(item) {
           const div = document.createElement('div');
