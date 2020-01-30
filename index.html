@@ -34,6 +34,10 @@
       box-shadow: 0 0 5px 0 rgba(1, 3, 4, 0.19);
     }
 
+    .cart-bg {
+      background: linear-gradient(to right,#73ba8f 0%, #93d798 100%);
+    }
+
     /* Hover effect for our team section */
     .test {
       overflow: hidden !important;
@@ -117,7 +121,7 @@
           <p>Call us: <a href="" class="hover:text-yellow transition-100 transition-ease-in-out">+1 (844) 123 4567</a></p>
           <p><a href="" class="hover:text-yellow transition-100 transition-ease-in-out">info@demolink.org</a></p>
         </div>
-        <div class="div flex items-center">
+        <div class="div flex justify-center items-center">
           <a href=""><i class="fas fa-bars fa-lg lg:hidden" id="bars"></i></a>
           <a href=""><img class="w-32 mx-4 lg:hidden" src="./images/logo-default-3-314x70.png" alt=""/></a>
           <a href=""><img class="w-40 mx-4 lg:block" src="./images/logo-inverse-3-314x70.png" alt=""/></a>
@@ -134,42 +138,48 @@
             <a class="text-white lg:text-black" href="">en</a>
           </div>
           <a href=""><i class="fas fa-ellipsis-v text-2xl sm:hidden"></i></a>
-          <div class="hidden ellipsis-dropdown absolute right-0 bg-white py-4 px-4 text-center shadow w-full sm:hidden md:hidden lg:w-1/4 lg:border-2 border border-gray-500" id="ellipsis" style="top:60px;">
-            <p class="text-gray text-base tracking-wider md:hidden lg:hidden"><span class="text-green">Call us:</span> +1 (844) 123 5678</p>
-            <p class="text-gray tracking-wider md:hidden lg:hidden">info@demolink.org</p>
-            <!-- Cart -->
-            <div class="cart-overlay">
-              <div class="cart py-4">
-                <h3 class="font-bold tracking-wide text-2xl text-black">Your Cart</i></h3>
-                <div class="cart-content flex items-center flex-col">
-                  <div class="cart-footer text-black">
-                    <h3 class="pb-2">Total : $<span class="cart-total">0</span></h3>
-                    <button class="clear-cart banner-btn bg-green px-2 py-1 text-white tracking-wider font-medium">Empty cart</button>
-                  </div>
-                </div>
-              </div>
-            </div> <!--End Cart Overlay -->
-          </div>
         </div>
       </div>
       <!-- NavBar -->
       <div class="w-full mobile-nav hidden lg:block lg:top-0" id="navbar">
         <div class="container mx-auto lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4" id="nav-container">
-          <ul class="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:py-6 md:text-black md:text-sm md:font-bold lg:text-white tracking-wider" id="nav">
-            <a href="#home"><img class="w-32 mx-4 hidden" src="./images/logo-inverse-3-314x70.png" alt="" id="logo"/></a>
-            <li class="my-1 mx-3 py-1 text-sm font-bold nav-item text-navActive hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#home">HOME</a></li>
-            <li class="my-1 mx-3 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#services">SERVICES</a></li>
-            <li class="my-1 mx-3 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#flavors">FLAVORS</a></li>
-            <li class="my-1 mx-3 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#organic">ORGANIC</a></li>
-            <li class="my-1 mx-3 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#testimonials">TESTIMONIALS</a></li>
-            <li class="my-1 mx-3 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#team">TEAM</a></li>
-            <div class="lg-cart-nav hidden relative py-2 cursor-pointer">
+          <ul class="flex flex-col lg:flex-row lg:items-center lg:py-6 md:text-black md:text-sm md:font-bold lg:text-white tracking-wider" id="nav">
+            <div class="flex justify-start">
+              <a href="#home"><img class="w-32 mx-4 hidden" src="./images/logo-inverse-3-314x70.png" alt="" id="logo"/></a>
+            </div>
+            <div class="w-full justify-center items-center md:flex">
+              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item text-navActive hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#home">HOME</a></li>
+              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#services">SERVICES</a></li>
+              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#flavors">FLAVORS</a></li>
+              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#organic">ORGANIC</a></li>
+              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#testimonials">TESTIMONIALS</a></li>
+              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#team">TEAM</a></li>
+            </div>
+            <div class="lg-cart-nav relative py-2 cursor-pointer flex items-end">
               <a class="hidden sm:mx-4 text-white cart-lg" id="shoppingCart"><i class="fas fa-shopping-cart text-xl"></i></a>
               <div class="rounded-full h-5 w-5 absolute top-0 z-20 text-black bg-yellow flex items-center justify-center" style="right: 6px;">
-                <span class="text-sm font-bold" id="shoppingScrolled">0</span>
+                <span class="cart-items text-sm font-bold" id="shoppingScrolled">0</span>
               </div>
             </div>
           </ul>
+          <!-- Cart -->
+          <div class="hidden wrapper relative" id="ellipsis">
+            <div class="ellipsis-dropdown absolute cart-bg py-3 px-4 right-0">
+              <p class="text-gray text-base tracking-wider md:hidden lg:hidden"><span class="text-green">Call us:</span> +1 (844) 123 5678</p>
+              <p class="text-gray tracking-wider md:hidden lg:hidden">info@demolink.org</p>
+              <div class="cart-overlay">
+                <div class="cart flex justify-between items-center">
+                  <h3 class="font-bold tracking-wider text-base text-white uppercase">Your Cart</i></h3>
+                  <div class="cart-footer text-black">
+                    <h3 class="text-white uppercase font-bold tracking-wider">Total : $<span class="cart-total">0</span></h3>
+                  </div>
+                </div>
+                <div class="cart-content flex items-center flex-col overflow-y-scroll" style="width: 600px; max-height: 400px;">
+
+                </div>
+              </div>
+            </div>
+          </div> <!--End Cart Overlay -->
         </div>
       </div>
     </nav>

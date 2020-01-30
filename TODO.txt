@@ -1,6 +1,7 @@
 ------ NAVBAR ------
 1. When the navbar becomes fixed by user scroll, update the # of items displayed in cart. It currently doesn't get updated because we are using
 querySelector which is grabbing the first class in the document.
+DONE
 2. When the navbar gets scrolled into place, the cart icon needs a function so the user can click on it and view items in cart, currently doesn't work.
 3. The cart doesn't display on sm and md devices when the cart icon is clicked in the navbar. 
 4. Make UI changes to the cart when the cart icon is clicked on. It's not positioned correctly on sm/md/lg/xl screens. Needs a lot more styling done.

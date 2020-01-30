@@ -1,25 +1,8 @@
 /* --------- Nav Section ---------- */
-// Mobile dropdown menu
 let mobileNav = document.querySelector('.mobile-nav');
 let mobileMenu = document.getElementById('bars');
 const ellipsisIcon = document.querySelector('.fa-ellipsis-v');
 const ellipsis = document.getElementById('ellipsis');
-
-// Show and hide the ellipsis menu on mobile
-ellipsisIcon.addEventListener('click', (e) => {
-  e.preventDefault();
-  ellipsis.classList.toggle('hidden');
-});
-
-ellipsis.addEventListener('click', (e) => {
-  e.preventDefault();
-  ellipsis.classList.toggle("hidden");
-})
-
-mobileMenu.addEventListener('click', function(e){
-  e.preventDefault();
-  mobileNav.classList.toggle('hidden');
-});
 
 let prenav = document.getElementById("prenav");
 let navbar = document.getElementById("navbar");
@@ -32,10 +15,15 @@ let cartItems = document.querySelector('.cart-items');
 let shoppingStaticNav = document.getElementById('shoppingStaticNav');
 let shoppingScrolled = document.getElementById('shoppingScrolled');
 
+// If the cart icon is clicked, display the cart items in the bag
 cart_icon_lg_screen.addEventListener('click', () => {
-  ellipsis.classList.toggle("lg:block");
-  ellipsis.classList.toggle("md:block");
-  ellipsis.classList.toggle("sm:block");
+  ellipsis.classList.toggle("hidden");
+});
+
+// Mobile drop down navigation
+mobileMenu.addEventListener('click', (e) => {
+  e.preventDefault();
+  mobileNav.classList.toggle('hidden');
 });
 
 function obCallback(payload) {
@@ -51,8 +39,10 @@ function obCallback(payload) {
     lgViewCartIcon.classList.remove('hidden');
     shoppingStaticNav.classList.remove('cart-items');
     shoppingScrolled.classList.add('cart-items');
-  } 
-  else { // If the prenav is shown
+    shoppingCart.addEventListener('click', () => {
+      ellipsis.classList.toggle('hidden');
+    });
+  } else { // If the prenav is shown
     navbar.classList.remove("fixed");
     navbar.classList.remove("nav-bg");
     navContainer.classList.add("lg:border-t");
@@ -68,7 +58,7 @@ function obCallback(payload) {
 const ob = new IntersectionObserver(obCallback);
 ob.observe(prenav) // Observes the prenav
 
-// Change the active state on nav-items
+// Change the active state color on nav-items
 var ulContainer = document.getElementById("nav");
 var navItems = ulContainer.getElementsByClassName("nav-item");
 
@@ -110,14 +100,13 @@ function showUpArrow(element) {
     op += op * 0.1;
   }, 10);
     upArrow.classList.remove("hidden");
-  } 
-  else { // If the team section container is shown
-    let op = 1;  // initial opacity
-    let timer = setInterval(function () {
-      if (op <= 0.1){
-        clearInterval(timer);
-        upArrow.style.display = 'none';
-      }
+  } else { // If the team section container is shown
+      let op = 1;  // initial opacity
+      let timer = setInterval(function () {
+        if (op <= 0.1){
+          clearInterval(timer);
+          upArrow.style.display = 'none';
+        }
       upArrow.style.opacity = op;
       upArrow.style.filter = 'alpha(opacity=' + op * 100 + ")";
       op -= op * 0.1;

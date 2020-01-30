@@ -8,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productsDOM = document.querySelector('.products-center');
     const btns = document.querySelectorAll('.bag-btn');
     const shoppingScrolled = document.getElementById('shoppingScrolled');
-    
-    
+    const cartContentFixed = document.querySelector('.cart-content-fixed');
 
     // Cart
     let cart = [];
@@ -256,12 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <img class="block h-32" src=${item.image} alt="">
           <div class="px-2 py-12 text-left">
             <h4 class="uppercase">${item.title}</h4>
-            <h5 class="text-green">$${item.price}</h5>
+            <h5 class="text-white">$${item.price}</h5>
             <span class="remove-item text-sm text-gray" data-id=${item.id}><a href="">remove</a></span>
           </div>
-          <div class="mx-4 text-black">
+          <div class="mx-4 text-black flex flex-col justify-center items-center">
             <a href=""><i class="fas fa-chevron-up" data-id=${item.id}></i></a>
-            <p class="item-amount">${item.amount}</p>
+            <p class="item-amount text-white">${item.amount}</p>
             <a href=""><i class="fas fa-chevron-down" data-id=${item.id}></i></a>
           </div>
           `;
