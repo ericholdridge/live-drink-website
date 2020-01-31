@@ -1,29 +1,40 @@
 /* --------- Nav Section ---------- */
+const nav = document.querySelector('nav');
 let mobileNav = document.querySelector('.mobile-nav');
 let mobileMenu = document.getElementById('bars');
 const ellipsisIcon = document.querySelector('.fa-ellipsis-v');
 const ellipsis = document.getElementById('ellipsis');
-
 let prenav = document.getElementById("prenav");
 let navbar = document.getElementById("navbar");
 let navContainer = document.getElementById("nav-container");
 let navbarLogo = document.getElementById('logo');
 let shoppingCart = document.getElementById('shoppingCart');
 let lgViewCartIcon = document.querySelector('.lg-cart-nav');
-let cart_icon_lg_screen = document.querySelector('.cart-icon-lg-screen');
+let cart_icon = document.querySelector('.cart-icon-lg-screen');
 let cartItems = document.querySelector('.cart-items');
 let shoppingStaticNav = document.getElementById('shoppingStaticNav');
 let shoppingScrolled = document.getElementById('shoppingScrolled');
+const smallScreenCart = document.querySelector('.smallScreenCart');
+
+
 
 // If the cart icon is clicked, display the cart items in the bag
-cart_icon_lg_screen.addEventListener('click', () => {
-  ellipsis.classList.toggle("hidden");
+cart_icon.addEventListener('click', () => {
+  ellipsis.classList.toggle("hidden")
 });
 
 // Mobile drop down navigation
 mobileMenu.addEventListener('click', (e) => {
   e.preventDefault();
   mobileNav.classList.toggle('hidden');
+});
+
+// Show cart on small screens
+ellipsisIcon.addEventListener('click', (e) => {
+  e.preventDefault();
+  smallScreenCart.classList.toggle("hidden");
+  smallScreenCart.style.marginTop = "10px";
+  nav.classList.toggle("pb-3");
 });
 
 function obCallback(payload) {

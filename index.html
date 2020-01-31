@@ -115,7 +115,7 @@
       <script src="./glider.min.js"></script>
       <script src="./cart.js"></script>
     <!-- Navigation -->
-    <nav class="shadow fixed z-10 bg-white w-full py-3 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent lg:shadow-none">
+    <nav class="shadow fixed z-10 bg-white w-full pt-3 pb-3 sm:fixed md:fixed lg:absolute lg:top-0 lg:bg-transparent lg:shadow-none">
       <div class="lg:pb-4 xl:pb-4 container px-4 mx-auto flex justify-between items-center lg:pt-4" id="prenav">
         <div class="wrap hidden lg:block lg:text-white font-normal tracking-wider">
           <p>Call us: <a href="" class="hover:text-yellow transition-100 transition-ease-in-out">+1 (844) 123 4567</a></p>
@@ -124,22 +124,23 @@
         <div class="div flex justify-center items-center">
           <a href=""><i class="fas fa-bars fa-lg lg:hidden" id="bars"></i></a>
           <a href=""><img class="w-32 mx-4 lg:hidden" src="./images/logo-default-3-314x70.png" alt=""/></a>
-          <a href=""><img class="w-40 mx-4 lg:block" src="./images/logo-inverse-3-314x70.png" alt=""/></a>
+          <a href=""><img class="hidden w-40 mx-4 lg:block" src="./images/logo-inverse-3-314x70.png" alt=""/></a>
         </div>
-        <div class="div flex items-center lg:text-white">
+        <div class="div flex items-center lg:text-white justify-between">
           <a href=""><i class="fas fa-search fa-lg"></i></a>
-          <a class="hidden sm:block sm:mx-4 sm:p-2 relative lg:p-2 cursor-pointer">
-            <i class="fas fa-shopping-cart fa-lg cart-icon-lg-screen"></i>
-            <div class="rounded-full sm:h-5 sm:w-5 lg:h-5 lg:w-5 absolute top-0 right-0 z-20 text-black bg-yellow flex items-center justify-center">
+          <a href=""><i class="fas fa-ellipsis-v text-2xl lg:hidden mx-4"></i></a>
+          <a class="hidden sm:hidden sm:mx-4 sm:p-2 lg:block relative lg:p-2 cursor-pointer">
+            <i class="hidden sm:hidden md:hidden lg:block fas fa-shopping-cart fa-lg cart-icon-lg-screen"></i>
+            <div class="hidden lg:flex rounded-full sm:h-5 sm:w-5 lg:h-5 lg:w-5 absolute top-0 right-0 z-20 text-black bg-yellow flex items-center justify-center">
               <span class="cart-items sm:text-xs lg:text-sm font-medium" id="shoppingStaticNav">0</span>
             </div>
           </a>
-          <div class="circle rounded-full h-8 w-8 mx-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white">
+          <div class="circle rounded-full h-8 w-8 mr-4 bg-green flex justify-center items-center sm:mx-0 lg:bg-white">
             <a class="text-white lg:text-black" href="">en</a>
           </div>
-          <a href=""><i class="fas fa-ellipsis-v text-2xl sm:hidden"></i></a>
         </div>
       </div>
+      
       <!-- NavBar -->
       <div class="w-full mobile-nav hidden lg:block lg:top-0" id="navbar">
         <div class="container mx-auto lg:block lg:mx-auto lg:border-t lg:border-navBdrColor lg:border-b xl:mt-4" id="nav-container">
@@ -147,13 +148,15 @@
             <div class="flex justify-start">
               <a href="#home"><img class="w-32 mx-4 hidden" src="./images/logo-inverse-3-314x70.png" alt="" id="logo"/></a>
             </div>
-            <div class="w-full justify-center items-center md:flex">
-              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item text-navActive hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#home">HOME</a></li>
-              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#services">SERVICES</a></li>
-              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#flavors">FLAVORS</a></li>
-              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#organic">ORGANIC</a></li>
-              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#testimonials">TESTIMONIALS</a></li>
-              <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#team">TEAM</a></li>
+            <div class="w-full justify-center items-center">
+              <ul class="lg:flex lg:justify-center">
+                <li class="my-1 mx-4 py-1 text-sm font-bold nav-item text-navActive hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#home">HOME</a></li>
+                <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#services">SERVICES</a></li>
+                <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#flavors">FLAVORS</a></li>
+                <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#organic">ORGANIC</a></li>
+                <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#testimonials">TESTIMONIALS</a></li>
+                <li class="my-1 mx-4 py-1 text-sm font-bold nav-item hover:text-white transition-100 transition-ease-in-out hover:bg-green transition-100 transition-ease-in-out lg:hover:text-yellow transition-100 transition-ease-in-out lg:my-0 lg:py-0 lg:px-4 lg:hover:bg-transparent"><a href="#team">TEAM</a></li>
+              </ul>
             </div>
             <div class="lg-cart-nav relative py-2 cursor-pointer flex items-end">
               <a class="hidden sm:mx-4 text-white cart-lg" id="shoppingCart"><i class="fas fa-shopping-cart text-xl"></i></a>
@@ -164,7 +167,7 @@
           </ul>
           <!-- Cart -->
           <div class="hidden wrapper relative" id="ellipsis">
-            <div class="ellipsis-dropdown absolute cart-bg py-3 px-4 right-0">
+            <div class="ellipsis-dropdown absolute cart-bg py-3 px-4 right-0 border border-servicesBorder">
               <p class="text-gray text-base tracking-wider md:hidden lg:hidden"><span class="text-green">Call us:</span> +1 (844) 123 5678</p>
               <p class="text-gray tracking-wider md:hidden lg:hidden">info@demolink.org</p>
               <div class="cart-overlay">
@@ -180,6 +183,28 @@
               </div>
             </div>
           </div> <!--End Cart Overlay -->
+        </div>
+      </div>
+       <!-- Show the shopping cart if the cart icon is clicked on small screens -->
+      <div class="w-full cart-bg">
+        <div class="container mx-auto">
+          <div class="hidden wrapper w-full lg:hidden smallScreenCart">
+            <div class="ellipsis-dropdown py-3 px-4">
+              <p class="text-center text-white text-base tracking-wider lg:hidden"><span class="text-white">Call us:</span> +1 (844) 123 5678</p>
+              <p class="text-center text-white tracking-wider lg:hidden">info@demolink.org</p>
+              <div class="cart-overlay">
+                <div class="cart flex justify-between items-center">
+                  <h3 class="font-bold tracking-wider text-base text-white uppercase">Your Cart</i></h3>
+                  <div class="cart-footer text-black">
+                    <h3 class="text-white uppercase font-bold tracking-wider">Total : $<span class="cart-total">0</span></h3>
+                  </div>
+                </div>
+                <div class="cart-content flex items-center flex-col overflow-y-scroll" style="width: 600px; max-height: 400px;">
+
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Cart Overlay -->
         </div>
       </div>
     </nav>
@@ -202,7 +227,7 @@
                             </p>
                         </div>
                         <div class="button flex justify-center py-4 sm:justify-start xl:pb-40">
-                            <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="/shopnow">SHOP NOW</a>
+                            <a class="px-8 py-4 rounded-lg bg-yellow uppercase shadow-md font-bold tracking-wider text-sm sm:px-12 lg:py-6 lg:px-14" href="#flavors">SHOP NOW</a>
                         </div>
                     </div>
                 </div>
@@ -316,7 +341,7 @@
     </section>
 
     <!-- Counter Section -->
-    <section class="w-full bg-center bg-no-repeat bg-cover bg-fixed" style="background-image: url('./images/parallax-2.jpg');">
+    <section class="w-full bg-center bg-no-repeat bg-cover bg-fixed bg-top" style="background-image: url('./images/parallax-2.jpg');">
         <div class="container mx-auto flex flex-wrap justify-between py-16 xl:py-32">
             <div class="w-6/12 sm:w-3/12 text-center text-white mb-8">
                 <span class="text-2xl font-bold border-b-2 border-b-white lg:text-5xl">245</span>
