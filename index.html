@@ -168,8 +168,6 @@
           <!-- Cart -->
           <div class="hidden wrapper relative" id="ellipsis">
             <div class="ellipsis-dropdown absolute cart-bg py-3 px-4 right-0 border border-servicesBorder">
-              <p class="text-gray text-base tracking-wider md:hidden lg:hidden"><span class="text-green">Call us:</span> +1 (844) 123 5678</p>
-              <p class="text-gray tracking-wider md:hidden lg:hidden">info@demolink.org</p>
               <div class="cart-overlay">
                 <div class="cart flex justify-between items-center">
                   <h3 class="font-bold tracking-wider text-base text-white uppercase">Your Cart</i></h3>
@@ -186,21 +184,21 @@
         </div>
       </div>
        <!-- Show the shopping cart if the cart icon is clicked on small screens -->
-      <div class="w-full cart-bg border">
+      <div class="w-full cart-bg relative">
         <div class="container mx-auto">
           <div class="hidden wrapper w-full lg:hidden smallScreenCart">
-            <div class="ellipsis-dropdown py-3 px-4">
+            <div class="ellipsis-dropdown py-3 px-4 relative">
               <p class="text-center text-white text-base tracking-wider lg:hidden"><span class="text-white">Call us:</span> +1 (844) 123 5678</p>
               <p class="text-center text-white tracking-wider lg:hidden">info@demolink.org</p>
-              <div class="cart-overlay">
-                <div class="cart flex justify-between items-center">
-                  <h3 class="font-bold tracking-wider text-base text-white uppercase">Your Cart</i></h3>
-                  <div class="cart-footer text-black">
-                    <h3 class="text-white uppercase font-bold tracking-wider">Total : $<span class="cart-total">0</span></h3>
-                  </div>
+              <div class="cart flex justify-between items-center" >
+                <h3 class="font-bold tracking-wider text-base text-white uppercase">Your Cart</i></h3>
+                <div class="cart-footer text-black">
+                  <h3 class="text-white uppercase font-bold tracking-wider">Total : $<span class="cart-total">0</span></h3>
                 </div>
-                <div class="cart-content flex items-center flex-col overflow-y-scroll" style="width: 600px; max-height: 400px;">
-
+              </div>
+              <div class="cart-overlay relative overflow-y-scroll" style="max-height: 400px;">
+                <div class="cart-content flex items-center flex-col justify-center">
+    
                 </div>
               </div>
             </div>
