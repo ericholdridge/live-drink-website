@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartOverlay = document.querySelector('.cart-overlay');
     let cartItems = document.querySelector('.cart-items');
     const cartTotal = document.querySelector('.cart-total');
-    const cartContent = document.querySelector('.cart-content');
+    const cartContent = document.querySelectorAll('.cart-content');
+    console.log(cartContent);
     const productsDOM = document.querySelector('.products-center');
     const btns = document.querySelectorAll('.bag-btn');
     const shoppingScrolled = document.getElementById('shoppingScrolled');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Display products
-    class UI {
+      class UI {
         displayProducts(products) {
             let result = '';
                 result += `
@@ -247,26 +248,28 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         addCartItem(item) {
-          const div = document.createElement('div');
-          div.classList.add('cart-items');
-          div.classList.add('flex');
-          div.classList.add('items-center');
-          div.innerHTML = `
-          <img class="block h-32" src=${item.image} alt="">
-          <div class="px-2 py-12 text-left">
-            <h4 class="uppercase">${item.title}</h4>
-            <h5 class="text-white">$${item.price}</h5>
-            <span class="remove-item text-sm text-gray" data-id=${item.id}><a href="">remove</a></span>
-          </div>
-          <div class="mx-4 text-black flex flex-col justify-center items-center">
-            <a href=""><i class="fas fa-chevron-up" data-id=${item.id}></i></a>
-            <p class="item-amount text-white">${item.amount}</p>
-            <a href=""><i class="fas fa-chevron-down" data-id=${item.id}></i></a>
-          </div>
-          `;
-          cartContent.appendChild(div);
+          for(let i = 0; i < cartContent.length; i++){
+            const div = document.createElement('div');
+            div.classList.add('cart-items');
+            div.classList.add('flex');
+            div.classList.add('items-center');
+            div.innerHTML = `
+            <img class="block h-32" src=${item.image} alt="">
+            <div class="px-2 py-12 text-left">
+              <h4 class="uppercase">${item.title}</h4>
+              <h5 class="text-white">$${item.price}</h5>
+              <span class="remove-item text-sm text-gray" data-id=${item.id}><a href="">remove</a></span>
+            </div>
+            <div class="mx-4 text-black flex flex-col justify-center items-center">
+              <a href=""><i class="fas fa-chevron-up" data-id=${item.id}></i></a>
+              <p class="item-amount text-white">${item.amount}</p>
+              <a href=""><i class="fas fa-chevron-down" data-id=${item.id}></i></a>
+            </div>
+            `;
+              cartContent[i].appendChild(div);
+          }
         }
-    }
+      }
 
     // Local storage
     class Storage {
