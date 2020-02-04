@@ -1,14 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const clearCart = document.querySelector('.clear-cart');
-    const cartDOM = document.querySelector('.cart');
-    const cartOverlay = document.querySelector('.cart-overlay');
+    const clearCartBtn = document.querySelector('.clear-cart');
     let cartItems = document.querySelector('.cart-items');
     const cartTotal = document.querySelectorAll('.cart-total');
     const cartContent = document.querySelectorAll('.cart-content');
     const productsDOM = document.querySelector('.products-center');
-    const btns = document.querySelectorAll('.bag-btn');
     const shoppingScrolled = document.getElementById('shoppingScrolled');
-    const cartContentFixed = document.querySelector('.cart-content-fixed');
 
     // Cart
     let cart = [];
@@ -211,15 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
           buttonsDOM = buttons;
           buttons.forEach(button => {
             let id = button.dataset.id;
-            let inCart = cart.find(item => item.id === id);
-            if(inCart) {
-              button.innertext = "In Cart";
-              button.disabled = true;
-            }
               button.addEventListener('click', (event) => {
                 event.preventDefault();
-                event.target.innertext = "In Cart";
-                event.target.disabled = true;
                 // Get product from products
                 let cartItem = {...Storage.getProduct(id), amount:1}; 
                 // Add product to the cart
@@ -230,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.setCartValues(cart);
                 // Display cart item
                 this.addCartItem(cartItem);
-                // Show the cart
               });
           });
         }
@@ -274,6 +262,26 @@ document.addEventListener('DOMContentLoaded', () => {
               cartContent[i].appendChild(div);
           }
         }
+        setupAPP() {
+          cart = Storage.getCart();
+          this.setCartValues(cart);
+          this.populateCart(cart);
+        }
+
+        populateCart(cart){
+          cart.forEach(item => this.addCartItem(item));
+        }
+
+        cartLogic() {
+          clearCartBtn.addEventListener('click', () => {
+            this.clearCart();
+          });
+        }
+        clearCart() {
+          console.log(this);
+          // let cartItems = cart.map(item => item.id);
+          // console.log(cartItems);
+        }
       }
 
     // Local storage
@@ -288,10 +296,16 @@ document.addEventListener('DOMContentLoaded', () => {
       static saveCart(cart) {
         localStorage.setItem('cart', JSON.stringify(cart));
       }
+      static getCart() {
+        return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+      }
     }
 
     const ui = new UI();
     const products = new Products();
+
+    // Set up app
+    ui.setupAPP();
 
     // Get all of the products
     products.getProducts().then(products => {
@@ -299,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Storage.saveProducts(products);
     }).then(() => {
       ui.getBagButtons();
+      ui.cartLogic();
     });
 });
 
