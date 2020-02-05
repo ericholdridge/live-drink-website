@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const clearCartBtn = document.querySelector('.clear-cart');
+    const clearCartBtn = document.querySelectorAll('.clear-cart');
     let cartItems = document.querySelector('.cart-items');
     const cartTotal = document.querySelectorAll('.cart-total');
     const cartContent = document.querySelectorAll('.cart-content');
@@ -14,22 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Getting the products from products.json
     class Products{
-        async getProducts(){
-            try {
-                let result = await fetch('products.json');
-                let data = await result.json();
-                let products = data.items;
-                products = products.map(item => {
-                    const {title, price} = item.fields;
-                    const {id} = item.sys;
-                    const image = item.fields.image.fields.file.url;
-                    return {title,price,id,image}
-                });
-                return products;
-            } catch(error) {
-                console.log(error);
-            }
-        }
+      async getProducts(){
+        try {
+          let result = await fetch('products.json');
+          let data = await result.json();
+          let products = data.items;
+          products = products.map(item => {
+              const {title, price} = item.fields;
+              const {id} = item.sys;
+              const image = item.fields.image.fields.file.url;
+              return {title,price,id,image}
+          });
+          return products;
+        } catch(error) {
+            console.log(error);
+          }
+      }
     }
 
     // Display products
@@ -251,15 +251,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="px-2 py-12 text-left">
               <h4 class="uppercase">${item.title}</h4>
               <h5 class="text-white">$${item.price}</h5>
-              <span class="remove-item text-sm text-gray" data-id=${item.id}><a href="">remove</a></span>
+              <span class="remove-item text-sm text-gray cursor-pointer" data-id=${item.id}>remove</span>
             </div>
             <div class="mx-4 text-black flex flex-col justify-center items-center">
-              <a href=""><i class="fas fa-chevron-up" data-id=${item.id}></i></a>
+              <i class="fas fa-chevron-up cursor-pointer" data-id=${item.id}></i>
               <p class="item-amount text-white">${item.amount}</p>
-              <a href=""><i class="fas fa-chevron-down" data-id=${item.id}></i></a>
+              <i class="fas fa-chevron-down cursor-pointer" data-id=${item.id}></i>
             </div>
             `;
-              cartContent[i].appendChild(div);
+            cartContent[i].appendChild(div);
           }
         }
         setupAPP() {
@@ -273,14 +273,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         cartLogic() {
-          clearCartBtn.addEventListener('click', () => {
-            this.clearCart();
-          });
+          // Loop through both html divs that have .clear-cart class. 
+          for(let i = 0; i < clearCartBtn.length; i++) {
+            clearCartBtn[i].addEventListener('click', () => {
+              this.clearCart();
+            });
+          }
+          for(let j = 0; j < cartContent.length; j++) {
+            cartContent[j].addEventListener('click', event => {
+              if(event.target.classList.contains("remove-item")){
+                let removeItem = event.target;
+                let id = removeItem.dataset.id;
+                cartContent[j].removeChild(removeItem.parentElement.parentElement);
+                this.removeItem(id);
+              } else if (event.target.classList.contains("fa-chevron-up")){
+                let addAmount = event.target;
+                let id = addAmount.dataset.id;
+                let tempItem = cart.find(item => item.id === id);
+                tempItem.amount = tempItem.amount + 1;
+                Storage.saveCart(cart);
+                this.setCartValues(cart);
+                // Change the DOM value
+                addAmount.nextElementSibling.innerText = tempItem.amount;
+              } else if (event.target.classList.contains("fa-chevron-down")) {
+                let lowerAmount = event.target;
+                let id = lowerAmount.dataset.id;
+                let tempItem = cart.find(item => item.id === id);
+                tempItem.amount = tempItem.amount - 1;
+                // If the item is less than zero
+                if(tempItem.amount > 0){
+                  Storage.saveCart(cart);
+                  this.setCartValues(cart);
+                  lowerAmount.previousElementSibling.innerText = tempItem.amount;
+                } else {
+                  cartContent[j].removeChild(lowerAmount.parentElement.parentElement);
+                  this.removeItem(id);
+                }
+              }
+            })
+          }
         }
+
         clearCart() {
-          console.log(this);
-          // let cartItems = cart.map(item => item.id);
-          // console.log(cartItems);
+          let cartItems = cart.map(item => item.id);
+          // Remove the item from the cart
+          cartItems.forEach(id => this.removeItem(id));
+          // Remove item from the dom
+          for(let i = 0; i < cartContent.length; i++){
+              while(cartContent[i].children.length > 0) {
+              cartContent[i].removeChild(cartContent[i].children[0]);
+            }
+          }
+        }
+
+        removeItem(id) {
+          cart = cart.filter(item => item.id !== id);
+          this.setCartValues(cart);
+          Storage.saveCart(cart);  
+        }
+
+        getSingleButton(id){
+          // Get specific button
+          return buttonsDOM.find(button => button.dataset.id === id);
         }
       }
 
